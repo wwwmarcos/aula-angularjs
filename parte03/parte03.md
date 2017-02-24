@@ -50,6 +50,7 @@ Tendo nosso service de Pessoa podemos injetar ele em qualquer controller ou até
   }
 })()
 ```
+Para visualizar os dados, criaremos um index.html como havimos criado antes.
 
 *index.html*
 ```html
