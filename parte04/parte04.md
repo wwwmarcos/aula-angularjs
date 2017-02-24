@@ -47,10 +47,10 @@ A função que representa a diretiva deve retornar um objeto com as configuraç�
 Configurações:
 
 - restrict: define o tipo da diretiva, entre eles temos:
-  - E: elemento `ex: <minha-diretava></minha-diretava>`
-  - A: atributo `ex: <div minha-diretava/>` 
-  - C: classe `ex: <div class="minha-diretava"/>`
-  - M: comentário `ex: <!-- directive:minha-diretava -->`
+  - E: elemento `ex: <my-directive></my-directive>`
+  - A: atributo `ex: <div my-directive/>` 
+  - C: classe `ex: <div class="my-directive"/>`
+  - M: comentário `ex: <!-- directive:my-directive -->`
 
 - scope: nos ajuda a manter um ecapsulamento, isolando a diretiva dos outros scopos da aplicação
 Podemos definir propriedades do scopo para utilizarmos em outro scopo.
