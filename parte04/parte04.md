@@ -18,4 +18,47 @@ Nossa diretiva tera o objetivo de simplificar esse códito todo:
   </div>
 ```
 
-Iremos continuar trabalhando em cima do exemplo 03:
+O primeiro passo é iniciar o arquivo em que criaremos nossa diretiva. Essa é a estrutura básica de uma diretiva:
+
+```js
+  (function() {
+    'use strict'
+
+    angular
+      .module('app')
+      .directive('inputText', inputText)
+
+      function inputText(){
+        var directive = {
+          restrict: 'E',
+          scope: {
+
+          },
+          templateUrl: './input-directive/input-directive.template.html',
+        }
+        return directive
+      }
+})()
+```
+
+Sintaxe de declaração: `.directive('nomeDaDiretiva', funcaoQueRepresentaEla)`
+A função que representa a diretiva deve retornar um objeto com as configurações da diretiva.
+
+Configurações:
+
+- restrict: define o tipo da diretiva, entre eles temos:
+  - E: elemento `ex: <minha-diretava></minha-diretava>`
+  - A: atributo `ex: <div minha-diretava/>` 
+  - C: classe `ex: <div class="minha-diretava"/>`
+  - M: comentário `ex: <!-- directive:minha-diretava -->`
+
+- scope: nos ajuda a manter um ecapsulamento, isolando a diretiva dos outros scopos da aplicação
+Podemos definir propriedades do scopo para utilizarmos em outro scopo.
+
+
+
+
+
+
+
+
