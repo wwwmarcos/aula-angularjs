@@ -1,4 +1,4 @@
-# Parte 4: directivas
+# Parte 4: Directivas
 
 Como já dito antes directivas são extensões da linguagem html que permitem a implementação de novos comportamentos de forma declarativa, manilupando o DOM.
 É possivel utilziar as directivas de forma que se reparoveite código, criando componentes para serem reutilizados no sitema todo.
@@ -106,7 +106,7 @@ Define a a localização do template ex: `templateUrl: './input-directive/input-
 ### link
 Função para manipulação do dom
 
-##$ controller
+### controller
 Define o `controller` do template da directiva
 
 
