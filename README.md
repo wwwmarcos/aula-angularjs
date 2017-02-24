@@ -27,16 +27,11 @@ Objetos javascript responsaveis pelo controle de uma view.
 São como container armazenam as partes da nossa aplicação (controllers, services, filters, etc). Isso facilita bastante na reutilização de código.
 
 ## Parte Prática
- - ### [parte01 - Hello Word](parte01/parte01.md)
- - ### [parte02 - Forms](parte02/parte02.md)
- - ### [parte03 - Services](parte03/parte03.md)
-
-### Parte 0.3: Services
-
-### Parte 0.4: Diretivas
-
-### Parte 0.5: SPA, angular-ui-router
-
-### Parte 0.6: Testes
+ -  [01 - Hello Word](parte01/parte01.md)
+ -  [02 - Forms](parte02/parte02.md)
+ -  [03 - Services](parte03/parte03.md)
+ -  [04 - Diretivas](parte03/parte03.md)
+ -  [05 - SPA](parte03/parte03.md)
+ -  [06 - Testes](parte03/parte03.md)
 
 
