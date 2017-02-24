@@ -26,10 +26,10 @@ Objetos javascript responsaveis pelo controle de uma view.
 - Modulos:
 São como container armazenam as partes da nossa aplicação (controllers, services, filters, etc). Isso facilita bastante na reutilização de código.
 
- ## Parte Prática
- - [parte01 - Hello Word](parte01/parte01.md)
- - [parte02 - Forms](parte02/parte02.md)
- - [parte03 - Services](parte03/parte03.md)
+## Parte Prática
+ - ### [parte01 - Hello Word](parte01/parte01.md)
+ - ### [parte02 - Forms](parte02/parte02.md)
+ - ### [parte03 - Services](parte03/parte03.md)
 
 ### Parte 0.3: Services
 
