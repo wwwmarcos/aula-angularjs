@@ -107,7 +107,6 @@ Feito isso precisaremos de um botão do tipo submit, esse botão não deve estar
 **Versão final do código:** 
 ```
 <html lang="pt-br" data-ng-app="app"> 
-<!-- exemplo02.html 02 -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

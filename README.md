@@ -35,3 +35,15 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
  -  [06 - Testes](parte03/parte03.md)
 
 
+## Links para estudar mais:
+ https://medium.com/@marcosflorencio/coisas-sobre-angularjs-que-eu-ficaria-feliz-em-ter-aprendido-antes-6de1a3174246#.65zgmtbhr
+  https://rafaell-lycan.com/2015/angular-services-factories-providers/
+  https://pt.wikipedia.org/wiki/Singleton
+  http://airtonvancin.com/blog/angularjs-validacao-de-formulario/
+  https://github.com/suissa/angularjs-directive-manual
+  https://github.com/ericdouglas/traduz-ai/blob/master/angularjs/004-mais-magicas-angularjs-para-turbinar-sua-webapp.md
+
+
+
+
+

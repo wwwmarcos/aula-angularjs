@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "lite-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcosflorencio/escola-de-ti-angular.git"
+  },
+  "author": "marcosflorencio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcosflorencio/escola-de-ti-angular/issues"
+  },
+  "homepage": "https://github.com/marcosflorencio/escola-de-ti-angular#readme",
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
+}

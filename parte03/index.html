@@ -1,0 +1,29 @@
+<html lang="pt-br" data-ng-app="app"> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parte 3 - Services</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  </head>
+  <body data-ng-controller="IndexController"> 
+    
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Idade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="pessoa in pessoas">
+          <td>{{pessoa.nome}}</td>
+          <td>{{pessoa.idade}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="index.controller.js"></script>
+  <script src="pessoa.service.js"></script>
+</html>

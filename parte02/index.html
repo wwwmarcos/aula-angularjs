@@ -2,11 +2,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Parte 2 - Forms</title>
+    <title>Parte 02 - Forms</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
   </head>
   <body data-ng-controller="IndexController"> 
-
+    <div class="container">
+      <h1>Cadastro de usúario</h1>
+      <!-- atributo novalidate faz o formulario ignorar as validações padrões do HTML  -->
+      <form name="formUsuario" data-ng-submit="salvarUsuario()" novalidate> 
+       
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && !formUsuario.nome.$pristine }">
+            <label>Nome</label>
+            <input type="text" name="nome" class="form-control" data-ng-model="usuario.nome" required>
+            <p data-ng-if="formUsuario.nome.$invalid && !formUsuario.nome.$pristine" class="help-block">
+              Seu nome é obrigatório.
+            </p>
+          </div>
+        </div>
+       
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.usuario.$invalid && !formUsuario.usuario.$pristine }">
+            <label>Nome de usuario</label>
+            <input type="text" name="usuario" class="form-control" data-ng-model="usuario.nomeUsuario" required>
+            <p data-ng-if="formUsuario.usuario.$invalid && !formUsuario.usuario.$pristine" class="help-block">
+              Nome de usuario é obrigatório.
+            </p>
+          </div>
+        </div>
+       
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
+          <input type="submit" class="btn btn-success" data-ng-disabled="formUsuario.$invalid" value="salvar">
+        </div>
+        
+      </form>
+    </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script>
@@ -16,7 +47,11 @@
     
     IndexController.$inject = ['$scope']; 
     function IndexController($scope){
+      $scope.salvarUsuario = salvarUsuario;
 
+      function salvarUsuario(){
+        alert('Usuário: ' + $scope.usuario.nome + ' |  ' + $scope.usuario.nomeUsuario + ' salvo!');
+      };
     };
   </script>
 </html>
