@@ -89,4 +89,4 @@ Nesse exemplo vemos a utilização da diretiva de atributo do angular chamada `n
 No exemplo é possível observar que a diretiva repete o elemento `tr` da tabela.
 
 Sintaxe:
-`ng-repeat="pessoa in pessoas"` sendo itens o array que contem os valores.
+`ng-repeat="pessoa in pessoas"` sendo pessoas o array que contem os valores.

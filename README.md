@@ -18,7 +18,7 @@ Atualmente angular possui uma segunda versão, utilizando typescript. Typescript
 Mvc trata-se de um padrão para dividir uma aplicação em diferentes partes (model, view e controller), cada uma com suas respectivas responsabilidades, porem o o angular não segue a risca o modelo mvc, mas algo próximo de um (model, view, viewmodel), logo seu time resolveu batizá-lo,  de um framework mvw (model view whatever).
 
 - Diretivas:
-Dretivas são extensões da linguagem html que permitem a implementação de novos comportamentos de forma declarativa, manilupando o DOM.
+Diretivas são extensões da linguagem html que permitem a implementação de novos comportamentos de forma declarativa, manilupando o DOM.
 
 - Controllers:
 Objetos javascript responsaveis pelo controle de uma view.
@@ -30,7 +30,7 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
  -  [01 - Hello Word](parte01/parte01.md)
  -  [02 - Forms](parte02/parte02.md)
  -  [03 - Services](parte03/parte03.md)
- -  [04 - Diretivas](parte03/parte03.md)
+ -  [04 - Diretivas](parte04/parte04.md)
  -  [05 - SPA](parte03/parte03.md)
  -  [06 - Testes](parte03/parte03.md)
 
