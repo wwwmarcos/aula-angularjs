@@ -9,7 +9,10 @@
       var directive = {
         restrict: 'E',
         scope: {
-
+          name: '@',
+          model: '=',
+          isRequired: '=',
+          label: '@'
         },
         templateUrl: './input-directive/input-directive.template.html',
         link: link

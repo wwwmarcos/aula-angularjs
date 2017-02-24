@@ -1,16 +1,23 @@
-<html lang="pt-br" data-ng-app="app"> 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Parte 3 - Services</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  </head>
-  <body data-ng-controller="IndexController"> 
-    
-    <input-text></input-text>
+<html lang="pt-br" data-ng-app="app">
 
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-  <script src="index.controller.js"></script>
-  <script src="input-directive/input.directive.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parte 3 - Services</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body data-ng-controller="IndexController">
+
+  <form name="pessoaForm">
+    <input-text name="nome" model="pessoa.nome" label="Nome"></input-text>
+  </form>
+
+  {{pessoaForm.$invalid}}
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="index.controller.js"></script>
+<script src="input-directive/input.directive.js"></script>
+
 </html>

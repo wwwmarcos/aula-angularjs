@@ -1,1 +1,9 @@
-<input type="text">
+<ng-form name="inputTextForm">
+    <div class="form-group" data-ng-class="{ 'has-error' : inputTextForm[name].$invalid && !inputTextForm[name].$pristine }">
+      <label>{{label}}</label>
+      <input type="text" name="{{name}}" class="form-control" data-ng-model="model" data-ng-required="isRequired">
+      <p data-ng-if="inputTextForm[name].$invalid && !inputTextForm[name].$pristine" class="help-block">
+        Campo obrigatório.
+      </p>
+    </div>
+  </ng-form>
