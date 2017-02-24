@@ -18,7 +18,7 @@ Nossa directiva tera o objetivo de simplificar esse códito todo:
   </div>
 ```
 
-### Como funciona uma directiva?
+### Mas antes, como funciona uma directiva?
 
 ```js
  (function() {
