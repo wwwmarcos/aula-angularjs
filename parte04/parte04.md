@@ -49,7 +49,7 @@ Nossa directiva tera o objetivo de simplificar esse códito todo:
 Sintaxe de declaração: `.directive('nomeDadirectiva', funcaoQueRepresentaEla)`
 A função que representa a directiva deve retornar um objeto com as configurações da directiva.
 
-Configurações:
+Principais Configurações:
 
 ### restrict: 
 Define o tipo da directiva, entre eles temos:

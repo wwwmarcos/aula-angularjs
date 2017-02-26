@@ -15,7 +15,7 @@ Para iniciamos uma estrutura básica como usamos até agora, a única diferença
   <body data-ng-controller="IndexController"> 
 
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script>
     angular
     .module('app', [])
@@ -53,7 +53,7 @@ Abaixo do input, abriremos uma tag `p` com a diretiva `ng-if` [(documentação o
 ```
 <label>Nome</label>
 <input type="text" name="nome" class="form-control" data-ng-model="usuario.nome" required>
- <p data-ng-if="formUsuario.nome.$invalid && !formUsuario.nome.$pristine" class="help-block">
+ <p data-ng-if="formUsuario.nome.$invalid && formUsuario.nome.$dirty" class="help-block">
   Seu nome é obrigatório.
 </p>
 ```
@@ -69,10 +69,10 @@ Mais sobre as propriedades:
 No estado atual do nosso input exibimos a frase quando o campo "nome" está invalido, ou seja vazio **&&** quando o campo já foi "tocado".  
 Para estilizar ainda nosso input usaremos a diretiva ```ng-class``` [(documentação oficial)](https://docs.angularjs.org/api/ng/directive/ngClass) que nos permite adicionar classes dinamicamente em um elemento.   
 ```
-<div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && !formUsuario.nome.$pristine }">
+<div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && formUsuario.nome.$dirty }">
   <label>Nome</label>
   <input type="text" name="nome" class="form-control" data-ng-model="usuario.nome" required>
-  <p data-ng-if="formUsuario.nome.$invalid && !formUsuario.nome.$pristine" class="help-block">
+  <p data-ng-if="formUsuario.nome.$invalid && formUsuario.nome.$dirty" class="help-block">
     Seu nome é obrigatório.
   </p>
 </div>
@@ -82,18 +82,18 @@ _Sintaxe da diretiva ng-class -> { 'nome-da-classe' : expressãoBooleana }_
 Até que já temos um input, vamos fazer o mesmo processo, porem para um campo 'nome do usuário':
 ```
 <form name="formUsuario" data-ng-submit="salvarUsuario()" novalidate> 
-  <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && !formUsuario.nome.$pristine }">
+  <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && formUsuario.nome.$dirty }">
     <label>Nome</label>
     <input type="text" name="nome" class="form-control" data-ng-model="usuario.nome" required>
-    <p data-ng-if="formUsuario.nome.$invalid && !formUsuario.nome.$pristine" class="help-block">
+    <p data-ng-if="formUsuario.nome.$invalid && !formUsuario.nome.$dirty" class="help-block">
       Seu nome é obrigatório.
     </p>
   </div>
 
-  <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.usuario.$invalid && !formUsuario.usuario.$pristine }">
+  <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.usuario.$invalid && formUsuario.usuario.$dirty }">
     <label>Nome de usuario</label>
     <input type="text" name="usuario" class="form-control" data-ng-model="usuario.nomeUsuario" required>
-    <p data-ng-if="formUsuario.usuario.$invalid && !formUsuario.usuario.$pristine" class="help-block">
+    <p data-ng-if="formUsuario.usuario.$invalid && formUsuario.usuario.$dirty" class="help-block">
       Nome de usuario é obrigatório.
     </p>
   </div>
@@ -110,7 +110,7 @@ Feito isso precisaremos de um botão do tipo submit, esse botão não deve estar
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ui-router-example</title>
+    <title>Parte 02 - Forms</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   </head>
@@ -121,20 +121,20 @@ Feito isso precisaremos de um botão do tipo submit, esse botão não deve estar
       <form name="formUsuario" data-ng-submit="salvarUsuario()" novalidate> 
        
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && !formUsuario.nome.$pristine }">
+          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && formUsuario.nome.$dirty }">
             <label>Nome</label>
             <input type="text" name="nome" class="form-control" data-ng-model="usuario.nome" required>
-            <p data-ng-if="formUsuario.nome.$invalid && !formUsuario.nome.$pristine" class="help-block">
+            <p data-ng-if="formUsuario.nome.$invalid && formUsuario.nome.$dirty" class="help-block">
               Seu nome é obrigatório.
             </p>
           </div>
         </div>
        
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.usuario.$invalid && !formUsuario.usuario.$pristine }">
+          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.usuario.$invalid && formUsuario.usuario.$dirty }">
             <label>Nome de usuario</label>
             <input type="text" name="usuario" class="form-control" data-ng-model="usuario.nomeUsuario" required>
-            <p data-ng-if="formUsuario.usuario.$invalid && !formUsuario.usuario.$pristine" class="help-block">
+            <p data-ng-if="formUsuario.usuario.$invalid && formUsuario.usuario.$dirty" class="help-block">
               Nome de usuario é obrigatório.
             </p>
           </div>
@@ -147,7 +147,7 @@ Feito isso precisaremos de um botão do tipo submit, esse botão não deve estar
       </form>
     </div>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script>
     angular
     .module('app', [])

@@ -6,7 +6,6 @@ Two way data binding cria uma ligação direta bidirecional entre o model e cont
 
 ```html
 <html lang="pt-br" data-ng-app="app"> <!-- declaração do modulo -->
-<!-- exemplo01.html 01 -->
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ui-router-example</title>
@@ -17,7 +16,7 @@ Two way data binding cria uma ligação direta bidirecional entre o model e cont
     <input type="text" data-ng-model="helloWord">
 
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script>
     angular
     .module('app', [])

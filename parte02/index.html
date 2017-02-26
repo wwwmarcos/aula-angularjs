@@ -13,20 +13,20 @@
       <form name="formUsuario" data-ng-submit="salvarUsuario()" novalidate> 
        
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && !formUsuario.nome.$pristine }">
+          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && formUsuario.nome.$dirty }">
             <label>Nome</label>
             <input type="text" name="nome" class="form-control" data-ng-model="usuario.nome" required>
-            <p data-ng-if="formUsuario.nome.$invalid && !formUsuario.nome.$pristine" class="help-block">
+            <p data-ng-if="formUsuario.nome.$invalid && formUsuario.nome.$dirty" class="help-block">
               Seu nome é obrigatório.
             </p>
           </div>
         </div>
        
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.usuario.$invalid && !formUsuario.usuario.$pristine }">
+          <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.usuario.$invalid && formUsuario.usuario.$dirty }">
             <label>Nome de usuario</label>
             <input type="text" name="usuario" class="form-control" data-ng-model="usuario.nomeUsuario" required>
-            <p data-ng-if="formUsuario.usuario.$invalid && !formUsuario.usuario.$pristine" class="help-block">
+            <p data-ng-if="formUsuario.usuario.$invalid && formUsuario.usuario.$dirty" class="help-block">
               Nome de usuario é obrigatório.
             </p>
           </div>
@@ -39,7 +39,7 @@
       </form>
     </div>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script>
     angular
     .module('app', [])

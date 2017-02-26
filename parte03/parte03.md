@@ -79,7 +79,7 @@ Para visualizar os dados, criaremos um index.html como havimos criado antes.
     </table>
 
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="index.controller.js"></script>
   <script src="pessoa.service.js"></script>
 </html>

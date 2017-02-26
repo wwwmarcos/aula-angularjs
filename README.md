@@ -31,11 +31,11 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
  -  [02 - Forms](parte02/parte02.md)
  -  [03 - Services](parte03/parte03.md)
  -  [04 - Diretivas](parte04/parte04.md)
- -  [05 - SPA](parte03/parte03.md)
- -  [06 - Testes](parte03/parte03.md)
+ -  05 - SPA 
+ -  06 - Testes
 
 
-## Links para estudar mais:
+## Mais links para estudar:
     https://rafaell-lycan.com/2015/angular-services-factories-providers/
     https://pt.wikipedia.org/wiki/Singleton
     http://airtonvancin.com/blog/angularjs-validacao-de-formulario/
