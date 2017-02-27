@@ -2,8 +2,6 @@
   'use strict'
 
    angular
-    .module('pessoa', [
-
-    ])
+    .module('pessoa', [])
     
 })()

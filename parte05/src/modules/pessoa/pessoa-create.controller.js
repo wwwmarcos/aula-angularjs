@@ -3,19 +3,7 @@
 
   angular
     .module('pessoa')
-    .config(config)
     .controller('PessoaCreateController', PessoaCreateController)
-
-  config.$inject = ['$stateProvider']
-
-  function config($stateProvider) {
-    $stateProvider
-      .state('pessoa-create', {
-        url: '/pessoa/create',
-        controller: 'PessoaCreateController',
-        templateUrl: './src/modules/pessoa/pessoa-create.html'
-      })
-  }
 
   PessoaCreateController.$inject = ['$scope', 'PessoaService']
 
@@ -26,10 +14,11 @@
     function save(pessoa) {
       PessoaService
         .save(pessoa)
-        .then(function(reponse){
+        .then(function(response) {
+          alert('Nova pessoa cadastrada')
           console.log('sucesso', response)
         })
-        .catch(function(error){
+        .catch(function(error) {
           console.log('errrrou', error)
         })
     }
