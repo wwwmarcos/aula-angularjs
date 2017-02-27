@@ -1,0 +1,7 @@
+<div class="container">
+  <form name="pessoaForm" data-ng-submit="save(pessoa)">
+    <input-text label="Nome" name="nome" model="pessoa.nome" is-required="true"></input-text>
+    <input-text label="Sobrenome" name="sobrenome" model="pessoa.sobrenome" is-required="true"></input-text>
+    <button type="submit" class="btn btn-success" data-ng-disabled="pessoaForm.$invalid">Salvar</button>
+  </form>
+</div>
