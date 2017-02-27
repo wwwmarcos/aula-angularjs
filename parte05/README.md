@@ -17,7 +17,7 @@ Instalaremos então primeiramente o `bower`, que é basicamente um modulo no `np
 
 Porque a gente vai usar esse bruxaria toda? Simples: Simplifica, você não precisa ficar indo atraz de `CDN` ou baixar os arquivos.   
 
-Para você contem o `npm`, use:
+Para verificar se você contem o `npm`, use:
 > $ npm -v
 
 Instalando o `bower` globalmente:
