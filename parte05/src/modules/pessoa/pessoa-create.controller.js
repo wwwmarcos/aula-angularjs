@@ -19,6 +19,7 @@
           console.log('sucesso', response)
         })
         .catch(function(error) {
+          alert('Erro')
           console.log('errrrou', error)
         })
     }
