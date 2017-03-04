@@ -1,4 +1,4 @@
-# Parte 4: SPA
+# Parte 5: SPA
 
 ### Single Page Applications
 
@@ -32,22 +32,128 @@ Usando angular via bower:
 > $ bower install angular --save
 
 Pronto, agora o bower irá instalar o angular, e salvar como uma dependência no nosso arquivo bower.json
-Instale também o ui-router, o modulo que nós ajudará na construção do nosso SPA:
+Instale também o ui-router, o modulo que nós ajudará na construção do nosso SPA e o bootstrap.
 
 > $ bower install angular-ui-router --save
+> $ bower install bootstrap --save
 
-### NPM 
-> $ npm init
-
-Se você seguiu as opções do `npm` até o final, um arquivo com nome `package.json` foi criado, e ele deve se parecer com isso:
+Feito isso temos três dependências no bower, que usaremos para construir nossa aplicação.
 
 ```json
-{
-  "name": "parte05",
-  "description": "### Single Page Applications",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "license": "MIT"
-}
+ "dependencies": {
+    "angular": "1.5.6",
+    "angular-ui-router": "^0.4.2",
+    "bootstrap": "^3.3.7"
+  }
+  ```
+
+Muito bem, vamos de fato iniciar nosso SPA criando nosso `index.html` conforme vimos nos exemplos anteriores, com uma pequena diferença agora, importaremos as dependência que instalamos com o bower. Dessa vez não será necessário declarar o `controller` no index.
+
+```html
+<html lang="pt-br" data-ng-app="app"> <!-- declaração do modulo -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parte 05 - SPA</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+  </body>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+</html>
 ```
+ Após isso, inicie uma para com nome `src`na raiz do seu projeto, e dentro dela crie um arquivo com o nome `app.js`, nesse arquivo iremos declarar nosso modulo principal, o modulo com nome `app`.
+ Aproveite e já declare no seu modulo `app` que o modulo `ui.router` será uma dependência.
+
+ ```js
+ (function() {
+  'use strict'
+
+   angular
+    .module('app', [
+      'ui.router'
+    ])
+})()
+```
+
+Nesse momento nosso modulo app está dependente do modulo `ui.router`. 
+Importe o arquivo `app.js` no index. 
+
+```html
+<script src="src/app.js"></script>
+```
+
+Separaremos nosso SPA por modulos, então dentro da pasta ``src` cria outra com o nome `modules`. Esta pasta irá conter os modulos da nossa aplicação.
+Nesse exemplo de SPA iremos utilizar o exemplo de diretiva que criamos no exemplo 04, então dentro da pasta `modules` cria uma pasta com o nome de `components`, esta pasta irá conter os componentes reutilizaveis da nossa aplicação, como por exemplo nossa diretiva de input (exemplo 04).
+Criar então dentro da pasta `components` o arquivo `components.module.js`, nesse arquivo iremos declarar o modulo com nome `components`.
+
+```js
+(function() {
+  'use strict'
+
+   angular
+    .module('components', [])
+})()
+```
+
+Não se esqueça de importar no index.
+
+```html
+  <script src="src/modules/components/components.module.js"></script>
+```
+
+Logo após isso, crie uma pasta com nome `input-directive` e marotamente jogue os arquivos do `exemplo04` lá ¯\_(ツ)_/¯. Feito isso faremos algumas alterações no nosso arquivo `.js` da diretiva.
+
+1. Mudar o modulo que a diretiva se registra.
+2. Mudar o caminho do template
+
+O arquivo fica assim.
+```js
+(function() {
+  'use strict'
+
+   angular
+    .module('components')
+    .directive('inputText', inputText)
+
+    function inputText(){
+      var directive = {
+        restrict: 'E',
+        scope: {
+          name: '@',
+          model: '=',
+          isRequired: '=',
+          label: '@'
+        },
+        templateUrl: './src/modules/components/input-directive/input-directive.template.html',
+        link: link
+      }
+      return directive
+
+      function link(scope, element, attrs){
+
+      }
+    }
+})()
+```
+
+E em seguida, também importe esse arquivo no index.
+```html
+  <script src="src/modules/components/input-directive/input.directive.js"></script>
+```
+
+Até agora, os imports de javascript que temos no index são:
+
+```html
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  
+  <script src="src/modules/components/components.module.js"></script>
+  <script src="src/modules/components/input-directive/input.directive.js"></script>
+```
+
+
+
+
+
+
