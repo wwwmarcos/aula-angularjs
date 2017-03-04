@@ -102,7 +102,7 @@ Não se esqueça de importar no index.
   <script src="src/modules/components/components.module.js"></script>
 ```
 
-### Após importar o arquivo no index, informe ao modulo principal `app` (app.js) que ele agora também depende do modulo `components`.
+ **Após importar o arquivo no index, informe ao modulo principal `app` (app.js) que ele agora também depende do modulo `components`.**
 
 ```js
  (function() {
@@ -186,7 +186,7 @@ Não se esqueça de importar o arquivo no index também.
   <script src="src/modules/pessoa/pessoa.module.js"></script>
 ```
 
-### Após importar o arquivo no index, informe ao modulo principal `app` (app.js) que ele agora também depende do modulo `pessoa`.
+**Após importar o arquivo no index, informe ao modulo principal `app` (app.js) que ele agora também depende do modulo `pessoa`.**
 
 ```js
  (function() {
@@ -199,39 +199,10 @@ Não se esqueça de importar o arquivo no index também.
       'pessoa'
     ])
 })()
-```
-Feito isso, criaremos nosso primeiro `controller` dentro do modulo de `pessoa`, o controller responsável por criar pessoas na aplicação `pessoa-create.controller.js`. E também importe no index.
 
-```js
-(function() {
-  'use strict'
-
-  angular
-    .module('pessoa')
-    .controller('PessoaCreateController', PessoaCreateController)
-
-  PessoaCreateController.$inject = ['$scope']
-  function PessoaCreateController($scope) {
-  }
-
-})()
 ```
 
-Após isso iremos iniciar nosso arquivo de view, com dois campos, nome e sobrenome. `pessoa-create.html`
-
-```html
-<div class="container">
-  <form name="pessoaForm" data-ng-submit="save(pessoa)" novalidate>
-    <input-text label="Nome" name="nome" model="pessoa.name" is-required="true"></input-text>
-    <input-text label="Sobrenome" name="sobrenome" model="pessoa.secondName" is-required="true"></input-text>
-    <button type="submit" class="btn btn-success" data-ng-disabled="pessoaForm.$invalid">Salvar</button>
-  </form>
-</div>
-``` 
-
-Já vimos essa bruxaria dos forms no exemplo02.
-
-Agora você deve estar se perguntar "eu teho a view, e o controller, mas quem liga eles?" e eu te repondo, nosso `router` fará isso. Criaremos agora dentro da nossa pasta (modulo) `pessoa` o arquivo `pessoa.routes.js`. Esse arquivo irá conter as configurações necessárias para nosso router funcionar, nele declaremos nossas rotas.
+Criaremos agora dentro da nossa pasta (modulo) `pessoa` o arquivo `pessoa.routes.js`. Esse arquivo irá conter as configurações necessárias para nosso router funcionar, nele declaremos nossas rotas.
 
 Esse arquivo é bem simples, primeiramente declaramos que ele faz parte do modulo de `pessoa`.
  Após isso criaremos uma configuração para esse modulo com a sintaxe que vemos no exemplo a baixo. Aproveite e injete na sua função de configuração o `provider` `$stateProvider`, esse provider faz parte do módulo `ui.router` que importarmos anteriormente.
@@ -270,7 +241,40 @@ Vamos iniciar então a configuração dos `states` / `urls` da nossa aplicação
   }
 })()
 ```
-### Não se esqueça de importar no index
+**Não se esqueça de importar o arquivo no index**
+
+Feito isso, criaremos nosso primeiro `controller` dentro do modulo de `pessoa`, o controller responsável por criar pessoas na aplicação `pessoa-create.controller.js`. E também importe no index.
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .controller('PessoaCreateController', PessoaCreateController)
+
+  PessoaCreateController.$inject = ['$scope']
+  function PessoaCreateController($scope) {
+  }
+
+})()
+```
+
+Após isso iremos iniciar nosso arquivo de view, com dois campos, nome e sobrenome. `pessoa-create.html`
+
+```html
+<div class="container">
+  <form name="pessoaForm" data-ng-submit="save(pessoa)" novalidate>
+    <input-text label="Nome" name="nome" model="pessoa.name" is-required="true"></input-text>
+    <input-text label="Sobrenome" name="sobrenome" model="pessoa.secondName" is-required="true"></input-text>
+    <button type="submit" class="btn btn-success" data-ng-disabled="pessoaForm.$invalid">Salvar</button>
+  </form>
+</div>
+``` 
+
+Já vimos essa bruxaria dos forms no exemplo02.
+
+
+
 
 
 
