@@ -29,13 +29,13 @@ Com o `bower` instalado, use o comando `bower init` para criar um `bower` file.
 Pronto, agora você possui um arquivo com nome `bower.json`, esse arquivo o bower utilizara para controlar suas dependências.
 
 Usando angular via bower:
-> $ bower install angular --save
+    > $ bower install angular --save
 
 Pronto, agora o bower irá instalar o angular, e salvar como uma dependência no nosso arquivo bower.json
 Instale também o ui-router, o modulo que nós ajudará na construção do nosso SPA e o bootstrap.
 
-> $ bower install angular-ui-router --save
-> $ bower install bootstrap --save
+    > $ bower install angular-ui-router --save
+    > $ bower install bootstrap --save
 
 Feito isso temos três dependências no bower, que usaremos para construir nossa aplicação.
 
@@ -102,7 +102,21 @@ Não se esqueça de importar no index.
   <script src="src/modules/components/components.module.js"></script>
 ```
 
-Logo após isso, crie uma pasta com nome `input-directive` e marotamente jogue os arquivos do `exemplo04` lá ¯\_(ツ)_/¯. Feito isso faremos algumas alterações no nosso arquivo `.js` da diretiva.
+### Após importar o arquivo no index, informe ao modulo principal `app` (app.js) que ele agora também depende do modulo `components`.
+
+```js
+ (function() {
+  'use strict'
+
+   angular
+    .module('app', [
+      'ui.router',
+      'components'
+    ])
+})()
+```
+
+Logo após isso, crie uma pasta com nome `input-directive` e marotamente jogue os arquivos do `exemplo04` lá `¯\_(ツ)_/¯`. Feito isso faremos algumas alterações no nosso arquivo `.js` da diretiva.
 
 1. Mudar o modulo que a diretiva se registra.
 2. Mudar o caminho do template
@@ -151,6 +165,123 @@ Até agora, os imports de javascript que temos no index são:
   <script src="src/modules/components/components.module.js"></script>
   <script src="src/modules/components/input-directive/input.directive.js"></script>
 ```
+
+Não se esqueça de verificar se fez tudo certo abrindo o projeto no navegador e observando erros no console.
+
+
+Vamos criar agora nosso segundo modulo, esse modulo se chamara `pessoa`. Crie então dentro da pasta `modules` uma pasta com nome `pessoa`, e em seguida o arquivo do modulo `pessoa.module.js`, como fizemos antes.
+
+```js
+(function() {
+  'use strict'
+
+   angular
+    .module('pessoa', [])
+    
+})()
+```
+Não se esqueça de importar o arquivo no index também.
+
+```html
+  <script src="src/modules/pessoa/pessoa.module.js"></script>
+```
+
+### Após importar o arquivo no index, informe ao modulo principal `app` (app.js) que ele agora também depende do modulo `pessoa`.
+
+```js
+ (function() {
+  'use strict'
+
+   angular
+    .module('app', [
+      'ui.router',
+      'components',
+      'pessoa'
+    ])
+})()
+```
+Feito isso, criaremos nosso primeiro `controller` dentro do modulo de `pessoa`, o controller responsável por criar pessoas na aplicação `pessoa-create.controller.js`. E também importe no index.
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .controller('PessoaCreateController', PessoaCreateController)
+
+  PessoaCreateController.$inject = ['$scope']
+  function PessoaCreateController($scope) {
+  }
+
+})()
+```
+
+Após isso iremos iniciar nosso arquivo de view, com dois campos, nome e sobrenome. `pessoa-create.html`
+
+```html
+<div class="container">
+  <form name="pessoaForm" data-ng-submit="save(pessoa)" novalidate>
+    <input-text label="Nome" name="nome" model="pessoa.name" is-required="true"></input-text>
+    <input-text label="Sobrenome" name="sobrenome" model="pessoa.secondName" is-required="true"></input-text>
+    <button type="submit" class="btn btn-success" data-ng-disabled="pessoaForm.$invalid">Salvar</button>
+  </form>
+</div>
+``` 
+
+Já vimos essa bruxaria dos forms no exemplo02.
+
+Agora você deve estar se perguntar "eu teho a view, e o controller, mas quem liga eles?" e eu te repondo, nosso `router` fará isso. Criaremos agora dentro da nossa pasta (modulo) `pessoa` o arquivo `pessoa.routes.js`. Esse arquivo irá conter as configurações necessárias para nosso router funcionar, nele declaremos nossas rotas.
+
+Esse arquivo é bem simples, primeiramente declaramos que ele faz parte do modulo de `pessoa`.
+ Após isso criaremos uma configuração para esse modulo com a sintaxe que vemos no exemplo a baixo. Aproveite e injete na sua função de configuração o `provider` `$stateProvider`, esse provider faz parte do módulo `ui.router` que importarmos anteriormente.
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .config(config)
+
+  config.$inject = ['$stateProvider']
+  function config($stateProvider) {
+  }
+})()
+```
+
+Vamos iniciar então a configuração dos `states` / `urls` da nossa aplicação. Juntando o nosso controller e provider
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .config(config)
+
+  config.$inject = ['$stateProvider']
+  function config($stateProvider) {
+    $stateProvider
+      .state('pessoa-create', {
+        url: '/pessoa/create',
+        controller: 'PessoaCreateController',
+        templateUrl: './src/modules/pessoa/pessoa-create.html'
+      })
+  }
+})()
+```
+### Não se esqueça de importar no index
+
+
+
+
+
+
+
+
+
+
+
 
 
 
