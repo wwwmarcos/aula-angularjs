@@ -281,6 +281,80 @@ Após isso iremos iniciar nosso arquivo de view, com dois campos, nome e sobreno
 
 Já vimos essa bruxaria dos forms no exemplo02.
 
+Execute a aplicação em algum servidor de sua preferencia, e acesse a url http://localhost:suaporta/#/pessoa/list. Eu estou utilizando o [lite-server](https://github.com/johnpapa/lite-server)
+Declaramos no nosso `pessoa-create.html` que ao submit executaremos a função `save`, vamos então criar essa função no controller.
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .controller('PessoaCreateController', PessoaCreateController)
+
+  PessoaCreateController.$inject = ['$scope']
+  function PessoaCreateController($scope) {
+    
+    $scope.save = save
+
+    function save(pessoa){
+      console.log('pessoa', pessoa)
+    }
+    
+  }
+})()
+```
+
+### 5.7.3 - Criando service do modulo de pessoa
+
+Conforme vimos no exemplo03, agora iremos criar um service, crie então um arquivo com nome `pessoa.service.js`dentro do modulo de pessoa, com algumas funções que iremos utilizar no nosso crud. Injetaremos no service outro service com o nome `$http`.
+Esse service faz parte do angular, nos ajuda com `requisições HTTP`.
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .factory('PessoaService', PessoaService)
+
+  PessoaService.$inject = ['$http']
+
+  function PessoaService($http) {
+
+    var HOST = 'https://escola-de-ti.herokuapp.com/person'
+
+    var factory = {
+      save: save,
+      edit: edit,
+      findOne: findOne,
+      getAll: getAll,
+      remove: remove
+    }
+    return factory
+
+
+    function save(pessoa) {
+    }
+
+    function edit(pessoa) {
+    }
+
+    function findOne(id) {
+    }
+
+    function getAll() {
+    }
+
+    function remove(pessoa){
+    }
+
+  }
+})()
+```
+**Não se esqueça de importar o arquivo no index**
+
+
 
 
 

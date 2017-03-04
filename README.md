@@ -48,7 +48,8 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
     SPA
     Promisse
     CRUD
-    
+    http
+
 
 
 
