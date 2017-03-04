@@ -2,6 +2,7 @@
 
 ### Single Page Applications
 
+### 5.1 - Introdução
 Uma Single Page Application (aplicação de página unica) consiste em uma aplicação com navegação baseada em AJAX.
 O usuário acessa a página principal, geralmente o index, e a partir dai navega para as outras views fazendo requisições, sem a necessidade de regarregar a página base.
 
@@ -17,6 +18,7 @@ Instalaremos então primeiramente o `bower`, que é basicamente um modulo no `np
 
 Porque a gente vai usar esse bruxaria toda? Simples: Simplifica, você não precisa ficar indo atraz de `CDN` ou baixar os arquivos.   
 
+### 5.2 - NPM & Bower
 Para verificar se você contem o `npm`, use:
 > $ npm -v
 
@@ -47,6 +49,7 @@ Feito isso temos três dependências no bower, que usaremos para construir nossa
   }
   ```
 
+### 5.3 - Criando modulo principal
 Muito bem, vamos de fato iniciar nosso SPA criando nosso `index.html` conforme vimos nos exemplos anteriores, com uma pequena diferença agora, importaremos as dependência que instalamos com o bower. Dessa vez não será necessário declarar o `controller` no index.
 
 ```html
@@ -83,6 +86,7 @@ Importe o arquivo `app.js` no index.
 <script src="src/app.js"></script>
 ```
 
+### 5.5 - Criando modulo components e importando nossa diretiva do exemplo04
 Separaremos nosso SPA por modulos, então dentro da pasta ``src` cria outra com o nome `modules`. Esta pasta irá conter os modulos da nossa aplicação.
 Nesse exemplo de SPA iremos utilizar o exemplo de diretiva que criamos no exemplo 04, então dentro da pasta `modules` cria uma pasta com o nome de `components`, esta pasta irá conter os componentes reutilizaveis da nossa aplicação, como por exemplo nossa diretiva de input (exemplo 04).
 Criar então dentro da pasta `components` o arquivo `components.module.js`, nesse arquivo iremos declarar o modulo com nome `components`.
@@ -156,6 +160,7 @@ E em seguida, também importe esse arquivo no index.
   <script src="src/modules/components/input-directive/input.directive.js"></script>
 ```
 
+### 5.6 - Verificando arquivos importados até agora
 Até agora, os imports de javascript que temos no index são:
 
 ```html
@@ -169,6 +174,7 @@ Até agora, os imports de javascript que temos no index são:
 Não se esqueça de verificar se fez tudo certo abrindo o projeto no navegador e observando erros no console.
 
 
+### 5.7 - Iniciando modulo pessoa
 Vamos criar agora nosso segundo modulo, esse modulo se chamara `pessoa`. Crie então dentro da pasta `modules` uma pasta com nome `pessoa`, e em seguida o arquivo do modulo `pessoa.module.js`, como fizemos antes.
 
 ```js
@@ -202,6 +208,7 @@ Não se esqueça de importar o arquivo no index também.
 
 ```
 
+### 5.7.1 - Configurando rotas
 Criaremos agora dentro da nossa pasta (modulo) `pessoa` o arquivo `pessoa.routes.js`. Esse arquivo irá conter as configurações necessárias para nosso router funcionar, nele declaremos nossas rotas.
 
 Esse arquivo é bem simples, primeiramente declaramos que ele faz parte do modulo de `pessoa`.
@@ -243,6 +250,7 @@ Vamos iniciar então a configuração dos `states` / `urls` da nossa aplicação
 ```
 **Não se esqueça de importar o arquivo no index**
 
+### 5.7.2 - Criando primeira view e controller 
 Feito isso, criaremos nosso primeiro `controller` dentro do modulo de `pessoa`, o controller responsável por criar pessoas na aplicação `pessoa-create.controller.js`. E também importe no index.
 ```js
 (function() {
