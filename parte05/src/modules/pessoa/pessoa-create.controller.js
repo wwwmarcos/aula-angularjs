@@ -5,9 +5,9 @@
     .module('pessoa')
     .controller('PessoaCreateController', PessoaCreateController)
 
-  PessoaCreateController.$inject = ['$scope', 'PessoaService']
+  PessoaCreateController.$inject = ['$scope', 'PessoaService', '$state']
 
-  function PessoaCreateController($scope, PessoaService) {
+  function PessoaCreateController($scope, PessoaService, $state) {
 
     $scope.save = save
 
@@ -17,6 +17,7 @@
         .then(function(response) {
           alert('Nova pessoa cadastrada')
           console.log('sucesso', response)
+          $state.reload()
         })
         .catch(function(error) {
           alert('Erro')

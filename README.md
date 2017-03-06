@@ -44,6 +44,15 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
     https://medium.com/@marcosflorencio/coisas-sobre-angularjs-que-eu-ficaria-feliz-em-ter-aprendido-antes-6de1a3174246#.65zgmtbhr
     https://blog.codecasts.com.br/single-page-applications-onde-vivem-e-o-que-comem-4fc9a44f3de#.xro79ehf3
 
+## Palavras chave para estudo
+    SPA
+    CRUD
+    http
+    Promisse
+    Grunt
+    Gulp
+    NPM
+    Bower
 
 
 

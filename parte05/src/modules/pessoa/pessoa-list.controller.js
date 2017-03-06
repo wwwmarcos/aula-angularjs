@@ -20,6 +20,7 @@
       .then(function(response){
         console.log(response)
         alert('Pessoa removida')
+        $state.reload()
       })
       .catch(function(error){
         console.log('error {}', error)
