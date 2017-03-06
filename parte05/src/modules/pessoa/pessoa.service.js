@@ -51,11 +51,10 @@
       })
     }
 
-    function remove(pessoa){
+    function remove(pessoa) {
       return $http({
         method: 'DELETE',
-        url: END_POINT + '/remove',
-        data: pessoa
+        url: END_POINT + '/remove/' + pessoa._id,
       })
     }
 

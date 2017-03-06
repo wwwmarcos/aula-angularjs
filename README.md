@@ -46,9 +46,13 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
 
 ## Palavras chave para estudo
     SPA
-    Promisse
     CRUD
     http
+    Promisse
+    Grunt
+    Gulp
+    NPM
+    Bower
 
 
 
