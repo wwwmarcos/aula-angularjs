@@ -626,7 +626,77 @@ Feito isso já podemos utilizalo em nosso controller, como fizemos com os outros
   }
 })()
 ```
+ ### 5.8.1 - Enviando o usuario para a tela de editar a partir da tela de listagem
 
+ Ainda não temos uma tela de editar, porem já deixaremos o esquema no jeito.
+
+ Primeiro passo, adicionar um botão de editar na nossa listagem.
+
+ ```html
+<div class="container">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="pessoa in pessoas">
+            <td>{{pessoa.name}}</td>
+            <td>{{pessoa.secondName}}</td>
+            <td>
+              <button type="button" class="btn btn-default" data-ng-click="goToEdit(pessoa)">Editar</button>
+              <button type="button" class="btn btn-danger" data-ng-click="remove(pessoa)">Remover</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+```
+
+Segundo passo, criar essa função nomeada `goToEdit`. Detalhe, iremos utilizar o service `$state` do nosso modulo `ui.router`, chamando seu metodo `go`.
+A sintaxe é simples:
+`$state.go('state-name', parametros)`
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .controller('PessoaListController', PessoaListController)
+
+  PessoaListController.inject = ['$scope', 'pessoaListResolve', '$state', 'PessoaService']
+  function PessoaListController($scope, pessoaListResolve, $state, PessoaService) {
+    $scope.pessoas = pessoaListResolve.data
+    $scope.goToEdit = goToEdit
+    $scope.remove = remove
+
+    function goToEdit(pessoa){
+      $state.go('pessoa-edit', { id: pessoa._id })
+    }
+
+    function remove(pessoa) {
+      PessoaService.remove(pessoa)
+      .then(function(response){
+        console.log(response)
+        alert('Pessoa removida')
+      })
+      .catch(function(error){
+        console.log('error {}', error)
+      })
+    }
+
+  }
+
+})()
+```
+Resumindo, estamos dizendo ao service `$state` que queremos ir para a pagina de edição, enviando como pametro o `id` da nossa pessoa. Isso ficara mais claro no nosso próximo passo :)
 
 
 
