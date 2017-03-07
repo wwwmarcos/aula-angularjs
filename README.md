@@ -48,7 +48,7 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
     https://nandovieira.com.br/entendendo-um-pouco-mais-sobre-o-protocolo-http
     https://tableless.com.br/fluxo-de-execucao-assincrono-em-javascript-promises/
 
-## Palavras chave para estudo
+## Palavras chave para estudo:
     SPA
     CRUD
     http
