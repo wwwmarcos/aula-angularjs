@@ -43,6 +43,8 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
     https://github.com/ericdouglas/traduz-ai/blob/master/angularjs/004-mais-magicas-angularjs-para-turbinar-sua-webapp.md
     https://medium.com/@marcosflorencio/coisas-sobre-angularjs-que-eu-ficaria-feliz-em-ter-aprendido-antes-6de1a3174246#.65zgmtbhr
     https://blog.codecasts.com.br/single-page-applications-onde-vivem-e-o-que-comem-4fc9a44f3de#.xro79ehf3
+    https://nandovieira.com.br/entendendo-um-pouco-mais-sobre-o-protocolo-http
+    https://tableless.com.br/fluxo-de-execucao-assincrono-em-javascript-promises/
 
 ## Palavras chave para estudo
     SPA

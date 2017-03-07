@@ -354,8 +354,88 @@ Esse service faz parte do angular, nos ajuda com `requisições HTTP`.
 ```
 **Não se esqueça de importar o arquivo no index**
 
+### 5.7.4 - Fazendo uma requisição http para criar uma nova pessoa na api
 
+Na função `save` do nosso service iremos utilizar o service `$http` do angular para realizar uma comunição `http` com a API que está funcionando em `https://escola-de-ti.herokuapp.com/person`.
 
+```js
+    function save(pessoa) {
+      return $http({
+        method: 'POST',
+        url: END_POINT + '/create',
+        data: pessoa
+      })
+    }
+```
+Iremos esperar como parametro a pessoa que será salva, então chamaremos o service `$http` passando um objeto com sua configuração.
+
+```js
+{
+  method: 'POST',
+  url: END_POINT + '/create',
+  data: pessoa
+}
+```
+
+- method: tipo do metodo `http` que será utilizado
+- url: url a ser utilizada (url da api)
+- data: objeto que enviaremos com a requisição
+
+Esse metodo `$http({}` irá retonar uma `promisse`
+
+*"Promise é um objeto usado para processamento assíncrono. Um Promise (de "promessa") representa um valor que pode estar disponível agora, no futuro ou nunca."*
+
+Veremos com mais clareza no proximo passo. Iremos injetar o service `PessoaService` no nosso controller de cadastro, e então chamaremos o metodo `save` do nosso controller.
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .controller('PessoaCreateController', PessoaCreateController)
+
+  PessoaCreateController.$inject = ['$scope', 'PessoaService']
+  function PessoaCreateController($scope, PessoaService) {
+    
+    $scope.save = save
+
+    function save(pessoa) {
+      PessoaService
+        .save(pessoa)
+        .then(function(response) {
+          alert('Nova pessoa cadastrada')
+          console.log('ual', response)
+        })
+        .catch(function(error) {
+          alert('Erro')
+          console.log('errrrou', error)
+        })
+    }
+    
+  }
+})()
+```
+
+Quando invocamos o metodo `PessoaService.save(pessoa)` ele nos devolve uma `promisse`. Podemos então atribuit um `callback` para quando a `promisse` for resolvida:
+```js
+.then(function(response){
+
+})
+```
+
+Esse `callback` recebe como parametro a resolução da promisse. Temos podemos atribuir outro `callback` para quando a `promisse` falhar, `catch` que é similar ao anterior porem recebe como parametro o erro ocorrido.
+```js
+.then(function(response){
+
+})
+.catch(function(error) {
+  alert('Erro')
+  console.log('errrrou', error)
+})
+```
+
+Se tudo correr bem até aqui já podemos cadastrar pessoas na nossa `API`.
 
 
 
