@@ -1,4 +1,4 @@
-# Parte 0.1: Hello Word
+# Parte 01: Hello Word
 
 # Menu
  -  [Inicio](../#escola-de-ti-angular)
