@@ -9,7 +9,7 @@
 
   function PessoaService($http) {
 
-    var END_POINT = 'https://escola-de-ti.herokuapp.com/person'
+    var HOST = 'https://escola-de-ti.herokuapp.com/person'
 
     var factory = {
       save: save,
@@ -24,7 +24,7 @@
     function save(pessoa) {
       return $http({
         method: 'POST',
-        url: END_POINT + '/create',
+        url: HOST + '/create',
         data: pessoa
       })
     }
@@ -32,7 +32,7 @@
     function edit(pessoa) {
       return $http({
         method: 'PUT',
-        url: END_POINT + '/edit',
+        url: HOST + '/edit',
         data: pessoa
       })
     }
@@ -40,21 +40,21 @@
     function findOne(id) {
       return $http({
         method: 'GET',
-        url: END_POINT + '/get/' + id,
+        url: HOST + '/get/' + id,
       })
     }
 
     function getAll() {
       return $http({
         method: 'GET',
-        url: END_POINT + '/list',
+        url: HOST + '/list',
       })
     }
 
     function remove(pessoa) {
       return $http({
         method: 'DELETE',
-        url: END_POINT + '/remove/' + pessoa._id,
+        url: HOST + '/remove/' + pessoa._id,
       })
     }
 

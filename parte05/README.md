@@ -698,16 +698,201 @@ A sintaxe é simples:
 ```
 Resumindo, estamos dizendo ao service `$state` que queremos ir para a pagina de edição, enviando como pametro o `id` da nossa pessoa. Isso ficara mais claro no nosso próximo passo :)
 
+### 5.9 - Editando um usuário
+Para podemos editar iremos primeiramente precisar do implementar nosso metodo `findOne` do `PessoaService` para podermos recuperar uma pessoa com base em seu `_id`.
+
+```js
+function findOne(id) {
+  return $http({
+    method: 'GET',
+    url: HOST + '/get/' + id,
+  })
+}
+```
+Um `HTTP GET`
+
+Vamos então novamente ao nosso arquivo `pessoa.routes.js` configurar as rotas da nossa edição, adicionando mais um `state`.
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .config(config)
+
+  config.$inject = ['$stateProvider']
+  function config($stateProvider) {
+    $stateProvider
+      .state('pessoa-create', {
+        url: '/pessoa/create',
+        controller: 'PessoaCreateController',
+        templateUrl: './src/modules/pessoa/pessoa-create.html'
+      })
+      .state('pessoa-list', {
+        url: '/pessoa/list',
+        controller: 'PessoaListController',
+        templateUrl: './src/modules/pessoa/pessoa-list.html',
+        resolve: {
+          pessoaListResolve: pessoaListResolve
+        }
+      })
+      .state('pessoa-edit', {
+        url: '/pessoa/:id/edit',
+        controller: 'PessoaEditController',
+        templateUrl: './src/modules/pessoa/pessoa-create.html',
+        resolve: {
+          pessoaFindOneResolve: pessoaFindOneResolve
+        }
+      })
+  }
+
+  pessoaFindOneResolve.$inject = ['PessoaService', '$stateParams']
+  function pessoaFindOneResolve(PessoaService, $stateParams) {
+    return PessoaService.findOne($stateParams.id)
+  }
+
+  pessoaListResolve.inject = ['PessoaService'];
+  function pessoaListResolve(PessoaService) {
+    return PessoaService.getAll()
+  }
+})()
+```
+Temos um resolve um pouco diferente dessa vez.
+```js
+  pessoaFindOneResolve.$inject = ['PessoaService', '$stateParams']
+  function pessoaFindOneResolve(PessoaService, $stateParams) {
+    return PessoaService.findOne($stateParams.id)
+  }
+```
+
+Como mostrado no [passo anterior](#582---enviando-o-usuario-para-a-tela-de-editar-a-partir-da-tela-de-listagem), iremos receber aqui na rota de editar um parametro com nome `id` para podermos recuperar o nosso registro de pessoa.
+No nosso resolve usamos o service `$stateParams` para recuperar o valor passado com o `state`.  
+Detalhe: Informe na url o seu parametro. Ex:`/pessoa/:id/edit`
 
 
+Nesse exemplo como nossa view de `cadastro` é basicamente a mesma de `edição` usaremos a mesma. (`templateUrl: './src/modules/pessoa/pessoa-create.html`)
 
+Simples, né? Hora de criar o controller então.
+Como no nosso template `pessoa-create.html`, no submit do form iremos chamar a função `save`. Vamos criar essa função também.
+Injetaremos o resolve `pessoaFindOneResolve` e jogaremos seu valor no model `pessoa`, assim magicamente os campos se iniciarão preenchidos.
 
+```js
+(function() {
+  'use strict'
 
+  angular
+    .module('pessoa')
+    .controller('PessoaEditController', PessoaEditController)
 
+  PessoaEditController.inject = ['$scope', 'pessoaFindOneResolve', 'PessoaService', '$state']
+  function PessoaEditController($scope, pessoaFindOneResolve, PessoaService, $state) {
+    $scope.pessoa = pessoaFindOneResolve.data
+    $scope.save = save
 
+    function save(pessoa) {
 
+    }
+  }
+})()
+```
 
+Hora de implementar a ultima função do nosso `PessoaService`, o `edit`.
 
+```js
+function edit(pessoa) {
+  return $http({
+    method: 'PUT',
+    url: HOST + '/edit',
+    data: pessoa
+  })
+}
+```
+
+Um HTTP PUT enviando nossa pessoa editada para a API. Feito isso é só dar aquele capricho no nosso controller. Faça como quiser, eu farei assim:
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .controller('PessoaEditController', PessoaEditController)
+
+  PessoaEditController.inject = ['$scope', 'pessoaFindOneResolve', 'PessoaService', '$state']
+  function PessoaEditController($scope, pessoaFindOneResolve, PessoaService, $state) {
+    $scope.pessoa = pessoaFindOneResolve.data
+    $scope.save = save
+
+    function save(pessoa) {
+      PessoaService.edit(pessoa)
+      .then(function(response){
+        alert('Pessoad edita')
+        $state.go('pessoa-list')
+      })
+      .catch(function(error){
+        console.log('error {}', error)
+      })
+    }
+
+  }
+
+})()
+```
+
+#Bonus - Menu
+
+Vamos criar um simples menu no nosso `index.html` para facilitar a navegação.
+
+```html
+<nav class="navbar navbar-default" role="navigation">
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><a ui-sref="pessoa-create">Criar</a></li>
+      <li><a ui-sref="pessoa-list">Listar</a></li>
+    </ul>
+  </div>
+</nav>
+```
+Em vez de links usaremos a diretiva `ui-sref` que vem no modulo `ui.router` :)
+Sintaxe: `ui-sref="state-name"`
+
+`index.html` final:
+
+```html
+<html lang="pt-br" data-ng-app="app">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parte 05 - SPA</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="pessoa-create">Criar</a></li>
+          <li><a ui-sref="pessoa-list">Listar</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ui-view></ui-view>
+  </body>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  
+  <script src="src/modules/components/components.module.js"></script>
+  <script src="src/modules/components/input-directive/input.directive.js"></script>
+  <script src="src/modules/pessoa/pessoa.module.js"></script>
+  <script src="src/modules/pessoa/pessoa-create.controller.js"></script>
+  <script src="src/modules/pessoa/pessoa-list.controller.js"></script>
+  <script src="src/modules/pessoa/pessoa-edit.controller.js"></script>
+  <script src="src/modules/pessoa/pessoa.service.js"></script>
+  <script src="src/modules/pessoa/pessoa.routes.js"></script>
+  <script src="src/app.js"></script>
+</html>
+```
 
 
 
