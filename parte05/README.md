@@ -1,11 +1,11 @@
 # Parte 5: Single Page Applications
 
 # Menu
- -  [Inicio](../)
- -  [01 - Hello Word](../parte01/)
- -  [02 - Forms](../parte02/)
- -  [03 - Services](../parte03/)
- -  [04 - Diretivas](../parte04/)
+ -  [Inicio](../#escola-de-ti-angular)
+ -  [01 - Hello Word](../parte01/#parte-01-hello-word)
+ -  [02 - Forms](../parte02/#parte-2-forms)
+ -  [03 - Services](../parte03/#parte-3-services)
+ -  [04 - Diretivas](../parte04/#parte-4-directivas)
  -  05 - SPA
 
 ### 5.1 - Introdução
