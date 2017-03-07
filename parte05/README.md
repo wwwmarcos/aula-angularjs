@@ -359,13 +359,13 @@ Esse service faz parte do angular, nos ajuda com `requisições HTTP`.
 Na função `save` do nosso service iremos utilizar o service `$http` do angular para realizar uma comunição `http` com a API que está funcionando em `https://escola-de-ti.herokuapp.com/person`.
 
 ```js
-    function save(pessoa) {
-      return $http({
-        method: 'POST',
-        url: HOST + '/create',
-        data: pessoa
-      })
-    }
+function save(pessoa) {
+  return $http({
+    method: 'POST',
+    url: HOST + '/create',
+    data: pessoa
+  })
+}
 ```
 Iremos esperar como parametro a pessoa que será salva, então chamaremos o service `$http` passando um objeto com sua configuração.
 
@@ -760,10 +760,10 @@ Vamos então novamente ao nosso arquivo `pessoa.routes.js` configurar as rotas d
 ```
 Temos um resolve um pouco diferente dessa vez.
 ```js
-  pessoaFindOneResolve.$inject = ['PessoaService', '$stateParams']
-  function pessoaFindOneResolve(PessoaService, $stateParams) {
-    return PessoaService.findOne($stateParams.id)
-  }
+pessoaFindOneResolve.$inject = ['PessoaService', '$stateParams']
+function pessoaFindOneResolve(PessoaService, $stateParams) {
+  return PessoaService.findOne($stateParams.id)
+}
 ```
 
 Como mostrado no [passo anterior](#582---enviando-o-usuario-para-a-tela-de-editar-a-partir-da-tela-de-listagem), iremos receber aqui na rota de editar um parametro com nome `id` para podermos recuperar o nosso registro de pessoa.

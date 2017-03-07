@@ -30,14 +30,14 @@ Para iniciamos uma estrutura básica como usamos até agora, a única diferença
 ```
 Em seguida dentro da tag `body` iniciaremos um `form` (simulando um cadastro de usúario), nesse momento é importante nos atentarmos ao nome declarado no form porque será importante nas próximas validações. 
 
-```
+```html
 <form name="formUsuario" data-ng-submit="salvarUsuario()" novalidate>
 </form>
 ```
 O atributo ```novalidate``` define que as validações padrões do HTML5 serão ignoradas.  
 A diretiva de atributo ```ng-submit``` [(documentação oficial)](https://docs.angularjs.org/api/ng/directive/ngSubmit) espera uma função, essa função é executada quando acontece um ```submit``` dentro do form.   
 Nesse momento podemos criar essa função no controller também.
-```
+```js
 IndexController.$inject = ['$scope']; 
 function IndexController($scope){
   $scope.salvarUsuario = salvarUsuario;
@@ -50,7 +50,7 @@ Voltando ao `form`
 Agora criaremos um input comum usando o atributo `required` para indicarmos que aquele campo é requerido nesse formulário.  
 Abaixo do input, abriremos uma tag `p` com a diretiva `ng-if` [(documentação oficial)](https://docs.angularjs.org/api/ng/directive/ngIf), essa diretiva espera um valor **boolean** e recria/remove o elemento com base no valor recebido. Dentro dessa tag colocaremos as mensagens de validação. Nesse momento usaremos as propriedades de **form** que o angular nos fornece para construirmos nossa expressão. 
 
-```
+```html
 <label>Nome</label>
 <input type="text" name="nome" class="form-control" data-ng-model="usuario.nome" required>
  <p data-ng-if="formUsuario.nome.$invalid && formUsuario.nome.$dirty" class="help-block">
@@ -68,7 +68,7 @@ Mais sobre as propriedades:
 
 No estado atual do nosso input exibimos a frase quando o campo "nome" está invalido, ou seja vazio **&&** quando o campo já foi "tocado".  
 Para estilizar ainda nosso input usaremos a diretiva ```ng-class``` [(documentação oficial)](https://docs.angularjs.org/api/ng/directive/ngClass) que nos permite adicionar classes dinamicamente em um elemento.   
-```
+```html
 <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && formUsuario.nome.$dirty }">
   <label>Nome</label>
   <input type="text" name="nome" class="form-control" data-ng-model="usuario.nome" required>
@@ -80,7 +80,7 @@ Para estilizar ainda nosso input usaremos a diretiva ```ng-class``` [(documenta�
 _Sintaxe da diretiva ng-class -> { 'nome-da-classe' : expressãoBooleana }_
 
 Até que já temos um input, vamos fazer o mesmo processo, porem para um campo 'nome do usuário':
-```
+```html
 <form name="formUsuario" data-ng-submit="salvarUsuario()" novalidate> 
   <div class="form-group" data-ng-class="{ 'has-error' : formUsuario.nome.$invalid && formUsuario.nome.$dirty }">
     <label>Nome</label>
@@ -105,7 +105,7 @@ Feito isso precisaremos de um botão do tipo submit, esse botão não deve estar
 ```
 
 **Versão final do código:** 
-```
+```html
 <html lang="pt-br" data-ng-app="app"> 
   <head>
     <meta charset="utf-8">
@@ -164,3 +164,6 @@ Feito isso precisaremos de um botão do tipo submit, esse botão não deve estar
   </script>
 </html>
 ```
+
+## Desafio
+Você foi desafiado, melhore esse exemplo utilizando o módulo [ngMessages](https://docs.angularjs.org/api/ngMessages/directive/ngMessages)
