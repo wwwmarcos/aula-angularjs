@@ -1,12 +1,12 @@
 # Parte 01: Hello Word
 
-# Menu
- -  [Inicio](../#escola-de-ti-angular)
+### Menu
+ -  [Inicio](../)
  -  01 - Hello Word
- -  [02 - Forms](../parte02/#parte-2-forms)
- -  [03 - Services](../parte03/#parte-3-services)
- -  [04 - Diretivas](../parte04/#parte-4-directivas)
- -  [05 - SPA](../parte05/#parte-5-single-page-applications)
+ -  [02 - Forms](../parte02/)
+ -  [03 - Services](../parte03/)
+ -  [04 - Diretivas](../parte04/)
+ -  [05 - SPA](../parte05/)
 
 Ao iniciarmos nosso primeiro app, criaremos um index.hml como de costume e então usaremos o atributo `ng-app` para declararmos nosso primeiro e principal modulo da aplicação. O atributo ng-app pode ser utlizado em qualquer elemento da pagina, nesse exemplo usaremos na tag `<html>`.
 **Two way data binding **
