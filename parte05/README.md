@@ -362,7 +362,7 @@ Na função `save` do nosso service iremos utilizar o service `$http` do angular
     function save(pessoa) {
       return $http({
         method: 'POST',
-        url: END_POINT + '/create',
+        url: HOST + '/create',
         data: pessoa
       })
     }
@@ -372,7 +372,7 @@ Iremos esperar como parametro a pessoa que será salva, então chamaremos o serv
 ```js
 {
   method: 'POST',
-  url: END_POINT + '/create',
+  url: HOST + '/create',
   data: pessoa
 }
 ```
@@ -385,7 +385,7 @@ Esse metodo `$http({}` irá retonar uma `promisse`
 
 *"Promise é um objeto usado para processamento assíncrono. Um Promise (de "promessa") representa um valor que pode estar disponível agora, no futuro ou nunca."*
 
-Veremos com mais clareza no proximo passo. Iremos injetar o service `PessoaService` no nosso controller de cadastro, e então chamaremos o metodo `save` do nosso controller.
+Veremos com mais clareza no proximo passo. Iremos injetar o service `PessoaService` no nosso controller de cadastro, e então chamaremos o metodo `save` do `PessoaService` em nosso controller.
 
 ```js
 (function() {
@@ -427,7 +427,8 @@ Quando invocamos o metodo `PessoaService.save(pessoa)` ele nos devolve uma `prom
 Esse `callback` recebe como parametro a resolução da promisse. Temos podemos atribuir outro `callback` para quando a `promisse` falhar, `catch` que é similar ao anterior porem recebe como parametro o erro ocorrido.
 ```js
 .then(function(response){
-
+  alert('Nova pessoa cadastrada')
+  console.log('ual', response)
 })
 .catch(function(error) {
   alert('Erro')
@@ -436,6 +437,195 @@ Esse `callback` recebe como parametro a resolução da promisse. Temos podemos a
 ```
 
 Se tudo correr bem até aqui já podemos cadastrar pessoas na nossa `API`.
+
+### 5.8 - Iniciando uma listagem
+
+Nesse passo iremos criar uma listagem. O primeiro passo será alterar nosso metodo `getAll` no `PessoaService`.
+
+```js
+function getAll() {
+  return $http({
+    method: 'GET',
+    url: HOST + '/list',
+  })
+}
+```
+Uma requisição do tipo `GET` para recuperar todas nossas pessoas.
+Iremos então abrir nosso `pessoa-routes.js` e adicionar mais um `state`.
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .config(config)
+
+  config.$inject = ['$stateProvider']
+
+  function config($stateProvider) {
+    $stateProvider
+      .state('pessoa-create', {
+        url: '/pessoa/create',
+        controller: 'PessoaCreateController',
+        templateUrl: './src/modules/pessoa/pessoa-create.html'
+      })
+      .state('pessoa-list', {
+        url: '/pessoa/list',
+        controller: 'PessoaListController',
+        templateUrl: './src/modules/pessoa/pessoa-list.html',
+        resolve: {
+          pessoaListResolve: pessoaListResolve
+        }
+      })
+  }
+
+  pessoaListResolve.inject = ['PessoaService'];
+  function pessoaListResolve(PessoaService) {
+    return PessoaService.getAll()
+  }
+```
+
+Wtf, [resolve](https://github.com/angular-ui/ui-router/wiki#resolve)?  Isso mesmo, resolves são executados antes da nossa `view` ser exibida. Iremos usar `resolves` para fornecer dados a um `controller`, caso o voce mande a função do `resolve` retornar uma `promisse`ele irá aguardar ela ser resolvida antes de exibir a view, e então irá nos dar o valor da resposta.
+
+Feito isso iremos criar o arquivo `pessoa-list.controller.js`, nosso controller responsável pela listagem.
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .controller('PessoaListController', PessoaListController)
+
+  PessoaListController.inject = ['$scope', 'pessoaListResolve', 'PessoaService']
+  function PessoaListController($scope, pessoaListResolve, PessoaService) {
+    $scope.pessoas = pessoaListResolve.data
+
+  }
+})()
+
+```
+**Não se esqueça de importar o arquivo no index**
+
+Você pode reparar que temos o nosso `pessoaListResolve` injetado no controller, isso mesmo, dessa forma iremos utilizar esse resolve.
+Podemos então criar o arquivo `pessoa-list.html` para mostrar nossa lista de pessoas em uma tabela.
+
+```html
+<div class="container">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="pessoa in pessoas">
+            <td>{{pessoa.name}}</td>
+            <td>{{pessoa.secondName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+```
+ Feito isso, acessando a url `/pessoa/list'` já podemos ver uma lista com as pessoas caadastradas em nossa `API`.
+
+ ### 5.8.1 - Removendo um dado na listagem
+
+ Iremos aproveitar nossa listagem para adicionar a opção remover na nossa tabela. Um botão com um `ng-click` chamando uma função, passando como argumento a pessoa que será removida.
+
+ ```html
+<div class="container">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="pessoa in pessoas">
+            <td>{{pessoa.name}}</td>
+            <td>{{pessoa.secondName}}</td>
+            <td>
+              <button type="button" class="btn btn-danger" data-ng-click="remove(pessoa)">Remover</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+```
+Até ai tudo bem, criaremos no `controller` da listagem essa função.
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .controller('PessoaListController', PessoaListController)
+
+  PessoaListController.inject = ['$scope', 'pessoaListResolve',  'PessoaService']
+  function PessoaListController($scope, pessoaListResolve, PessoaService) {
+    $scope.pessoas = pessoaListResolve.data
+    $scope.remove = remove
+
+    function remove(pessoa) {
+    }
+
+  }
+
+})()
+```
+Como você deve ter imaginado, iremos precisar daquele metodo `remove` do nosso `PessoaService`, hora de terminar implementar ele.
+
+```js
+function remove(pessoa) {
+  return $http({
+    method: 'DELETE',
+    url: HOST + '/remove/' + pessoa._id,
+  })
+}
+```
+
+Tudo certo, nosso metodo remove ira esperar como parametro uma pessoa, e ira removela com base em seu atributo `_id`.
+Feito isso já podemos utilizalo em nosso controller, como fizemos com os outros.
+
+```js
+(function() {
+  'use strict'
+
+  angular
+    .module('pessoa')
+    .controller('PessoaListController', PessoaListController)
+
+  PessoaListController.inject = ['$scope', 'pessoaListResolve', 'PessoaService']
+  function PessoaListController($scope, pessoaListResolve, PessoaService) {
+    $scope.pessoas = pessoaListResolve.data
+    $scope.remove = remove
+
+    function remove(pessoa) {
+      PessoaService.remove(pessoa)
+      .then(function(response){
+        console.log(response)
+        alert('Pessoa removida')
+      })
+      .catch(function(error){
+        console.log('error {}', error)
+      })
+    }
+  }
+})()
+```
 
 
 
