@@ -9,7 +9,6 @@
  -  [05 - SPA](../parte05/#parte-5-single-page-applications)
 
 Ao iniciarmos nosso primeiro app, criaremos um index.hml como de costume e então usaremos o atributo `ng-app` para declararmos nosso primeiro e principal modulo da aplicação. O atributo ng-app pode ser utlizado em qualquer elemento da pagina, nesse exemplo usaremos na tag `<html>`.
-
 **Two way data binding **
 Two way data binding cria uma ligação direta bidirecional entre o model e controller (que?), resumindo as alterações feitas no model pela view são vistas pelo controller e vise versa, isso ficará mais claro no nosso primeiro exemplo.
 
