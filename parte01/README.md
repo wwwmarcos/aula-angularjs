@@ -1,4 +1,13 @@
 # Parte 0.1: Hello Word
+
+# Menu
+ -  [Inicio](../)
+ -  01 - Hello Word
+ -  [02 - Forms](../parte02/)
+ -  [03 - Services](../parte03/)
+ -  [04 - Diretivas](../parte04/)
+ -  [05 - SPA](../parte05/)
+
 Ao iniciarmos nosso primeiro app, criaremos um index.hml como de costume e então usaremos o atributo `ng-app` para declararmos nosso primeiro e principal modulo da aplicação. O atributo ng-app pode ser utlizado em qualquer elemento da pagina, nesse exemplo usaremos na tag `<html>`.
 
 **Two way data binding **
@@ -31,3 +40,9 @@ Two way data binding cria uma ligação direta bidirecional entre o model e cont
 ```
 No nosso primeiro exemplo podemos notar a criação do modulo usando a sintaxe `angular.module('nomeString', [])` e em seguida por meio de encadeamendo o controller `.controller('nomeDoControllerString', funcaoQueRepresentaOcontroller)`.
 Na função que representa o controller podemos ver o `$scope` sendo usado por meio de injeção de dependencias, `$scope` é objeto que contem o valor do model. Uma instancia desse objeto é disponibilizado para a view, cada contoller ou diretiva (chegaremos nisso) possui seu `$scope`.
+
+# live-demo
+
+Live-demo disponível em:
+[https://marcosflorencio.js.org/escola-de-ti-angular/parte01/index.html](https://marcosflorencio.js.org/escola-de-ti-angular/parte01/index.html)
+

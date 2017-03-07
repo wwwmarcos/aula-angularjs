@@ -1,5 +1,13 @@
 # Parte 3: Services
 
+# Menu
+ -  [Inicio](../)
+ -  [01 - Hello Word](../parte01/)
+ -  [02 - Forms](../parte02/)
+ -  03 - Services
+ -  [04 - Diretivas](../parte04/)
+ -  [05 - SPA](../parte05/)
+
 O angular possui services , objetos singletons que ajudam a compartilhar e organizar códigos na aplicação. 
 Usados geralmente para comunicação/requisições com o servidor (parte back-end), sendo eles:
 
@@ -90,3 +98,7 @@ No exemplo é possível observar que a diretiva repete o elemento `tr` da tabela
 
 Sintaxe:
 `ng-repeat="pessoa in pessoas"` sendo pessoas o array que contem os valores.
+
+# live-demo
+Live-demo disponível em:
+[https://marcosflorencio.js.org/escola-de-ti-angular/parte03/index.html](https://marcosflorencio.js.org/escola-de-ti-angular/parte03/index.html)

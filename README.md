@@ -31,11 +31,13 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
  -  [02 - Forms](parte02/)
  -  [03 - Services](parte03/)
  -  [04 - Diretivas](parte04/)
- -  05 - SPA 
+ -  [05 - SPA](parte05/)
  -  06 - Testes
 
+## Exemplos funcionando em:
+[https://marcosflorencio.js.org/escola-de-ti-angular/](https://marcosflorencio.js.org/escola-de-ti-angular/)
 
-## Mais links para estudar:
+## Links para estudar:
     https://rafaell-lycan.com/2015/angular-services-factories-providers/
     https://pt.wikipedia.org/wiki/Singleton
     http://airtonvancin.com/blog/angularjs-validacao-de-formulario/
@@ -43,6 +45,8 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
     https://github.com/ericdouglas/traduz-ai/blob/master/angularjs/004-mais-magicas-angularjs-para-turbinar-sua-webapp.md
     https://medium.com/@marcosflorencio/coisas-sobre-angularjs-que-eu-ficaria-feliz-em-ter-aprendido-antes-6de1a3174246#.65zgmtbhr
     https://blog.codecasts.com.br/single-page-applications-onde-vivem-e-o-que-comem-4fc9a44f3de#.xro79ehf3
+    https://nandovieira.com.br/entendendo-um-pouco-mais-sobre-o-protocolo-http
+    https://tableless.com.br/fluxo-de-execucao-assincrono-em-javascript-promises/
 
 ## Palavras chave para estudo
     SPA
