@@ -626,7 +626,7 @@ Feito isso já podemos utilizalo em nosso controller, como fizemos com os outros
   }
 })()
 ```
- ### 5.8.2 - Enviando o usuario para a tela de editar a partir da tela de listagem
+### 5.8.2 - Enviando o usuario para a tela de editar a partir da tela de listagem
 
  Ainda não temos uma tela de editar, porem já deixaremos o esquema no jeito.
 
