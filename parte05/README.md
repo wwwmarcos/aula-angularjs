@@ -1,6 +1,12 @@
-# Parte 5: SPA
+# Parte 5: Single Page Applications
 
-### Single Page Applications
+# Menu
+ -  [Inicio](../)
+ -  [01 - Hello Word](../parte01/)
+ -  [02 - Forms](../parte02/)
+ -  [03 - Services](../parte03/)
+ -  [04 - Diretivas](../parte04/)
+ -  05 - SPA
 
 ### 5.1 - Introdução
 Uma Single Page Application (aplicação de página unica) consiste em uma aplicação com navegação baseada em AJAX.
@@ -10,6 +16,8 @@ Onde entra angular nisso? Simples, uma das grandes vantagens do angular é facil
 
 *Router*: angular possui dois `modulos` bem conhecidos para gerenciamento de rotas (routers), sendo eles [ngRoute](https://docs.angularjs.org/api/ngRoute) e [uiRouter](https://github.com/angular-ui/ui-router). No nosso exemplo usaremo o `ui-router`.
 
+
+### 5.2 - NPM & Bower
 Para iniciar nosso exemplo, utilizaremos o `npm`juntamente com o `bower`. 
 
 O que é `npm`?  Node Package Manager, é gerenciador de dependências do node.
@@ -18,7 +26,6 @@ Instalaremos então primeiramente o `bower`, que é basicamente um modulo no `np
 
 Porque a gente vai usar esse bruxaria toda? Simples: Simplifica, você não precisa ficar indo atraz de `CDN` ou baixar os arquivos.   
 
-### 5.2 - NPM & Bower
 Para verificar se você contem o `npm`, use:
 > $ npm -v
 
@@ -31,23 +38,26 @@ Com o `bower` instalado, use o comando `bower init` para criar um `bower` file.
 Pronto, agora você possui um arquivo com nome `bower.json`, esse arquivo o bower utilizara para controlar suas dependências.
 
 Usando angular via bower:
-    > $ bower install angular --save
+> $ bower install angular --save
 
 Pronto, agora o bower irá instalar o angular, e salvar como uma dependência no nosso arquivo bower.json
 Instale também o ui-router, o modulo que nós ajudará na construção do nosso SPA e o bootstrap.
 
-    > $ bower install angular-ui-router --save
-    > $ bower install bootstrap --save
+> $ bower install angular-ui-router --save
+
+> $ bower install bootstrap --save
 
 Feito isso temos três dependências no bower, que usaremos para construir nossa aplicação.
 
 ```json
+{
  "dependencies": {
     "angular": "1.5.6",
     "angular-ui-router": "^0.4.2",
     "bootstrap": "^3.3.7"
   }
-  ```
+}
+```
 
 ### 5.3 - Criando modulo principal
 Muito bem, vamos de fato iniciar nosso SPA criando nosso `index.html` conforme vimos nos exemplos anteriores, com uma pequena diferença agora, importaremos as dependência que instalamos com o bower. Dessa vez não será necessário declarar o `controller` no index.
@@ -894,7 +904,9 @@ Sintaxe: `ui-sref="state-name"`
 </html>
 ```
 
-
+# live-demo
+Live-demo disponível em:
+[https://marcosflorencio.js.org/escola-de-ti-angular/parte05/index.html](https://marcosflorencio.js.org/escola-de-ti-angular/parte05/index.html)
 
 
 

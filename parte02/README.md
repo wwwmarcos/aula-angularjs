@@ -1,5 +1,13 @@
 # Parte 2: Forms
 
+# Menu
+ -  [Inicio](../)
+ -  [01 - Hello Word](../parte01/)
+ -  02 - Forms
+ -  [03 - Services](../parte03/)
+ -  [04 - Diretivas](../parte04/)
+ -  [05 - SPA](../parte05/)
+
 Para treinarmos um pouco mais oque foi visto até agora, faremos a validação de um ```<form>``` com angular, e usando o [boostrap](http://getbootstrap.com/) para a estilização dos exemplos.  
 Para iniciamos uma estrutura básica como usamos até agora, a única diferença é o import do boostrap.
 
@@ -167,3 +175,8 @@ Feito isso precisaremos de um botão do tipo submit, esse botão não deve estar
 
 ## Desafio
 Você foi desafiado, melhore esse exemplo utilizando o módulo [ngMessages](https://docs.angularjs.org/api/ngMessages/directive/ngMessages)
+
+
+# live-demo
+Live-demo disponível em:
+[https://marcosflorencio.js.org/escola-de-ti-angular/parte02/index.html](https://marcosflorencio.js.org/escola-de-ti-angular/parte02/index.html)

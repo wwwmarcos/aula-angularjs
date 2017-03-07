@@ -1,5 +1,13 @@
 # Parte 4: Directivas
 
+# Menu
+ -  [Inicio](../)
+ -  [01 - Hello Word](../parte01/)
+ -  [02 - Forms](../parte02/)
+ -  [03 - Services](../parte03/)
+ -  04 - Diretivas
+ -  [05 - SPA](../parte05/)
+
 Como já dito antes directivas são extensões da linguagem html que permitem a implementação de novos comportamentos de forma declarativa, manilupando o DOM.
 É possivel utilziar as directivas de forma que se reparoveite código, criando componentes para serem reutilizados no sitema todo.
 Iremos agora criar uma diretava de `input` para podermos criar inputs, com validações com mais facilidade.
@@ -230,3 +238,7 @@ Vantagens:
 
 
 *Caso tenha dúvidas consulte os arquivos no repositorio*
+
+# live-demo
+Live-demo disponível em:
+[https://marcosflorencio.js.org/escola-de-ti-angular/parte04/index.html](https://marcosflorencio.js.org/escola-de-ti-angular/parte04/index.html)
