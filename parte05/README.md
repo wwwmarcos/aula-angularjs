@@ -535,7 +535,7 @@ Podemos então criar o arquivo `pessoa-list.html` para mostrar nossa lista de pe
 ```
  Feito isso, acessando a url `/pessoa/list'` já podemos ver uma lista com as pessoas caadastradas em nossa `API`.
 
- ### 5.8.1 - Removendo um dado na listagem
+### 5.8.1 - Removendo um dado na listagem
 
  Iremos aproveitar nossa listagem para adicionar a opção remover na nossa tabela. Um botão com um `ng-click` chamando uma função, passando como argumento a pessoa que será removida.
 
