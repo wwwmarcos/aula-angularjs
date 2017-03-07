@@ -1,4 +1,4 @@
-# Parte 0.1: Hello Word
+# Parte 01: Hello Word
 Ao iniciarmos nosso primeiro app, criaremos um index.hml como de costume e então usaremos o atributo `ng-app` para declararmos nosso primeiro e principal modulo da aplicação. O atributo `ng-app` pode ser utlizado em qualquer elemento da pagina, nesse exemplo usaremos na tag `<html>`.
 
 **Two way data binding **
