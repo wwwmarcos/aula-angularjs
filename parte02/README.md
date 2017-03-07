@@ -1,12 +1,12 @@
 # Parte 2: Forms
 
 # Menu
- -  [Inicio](../#escola-de-ti-angular)
- -  [01 - Hello Word](../parte01/#parte-01-hello-word)
+ -  [Inicio](../)
+ -  [01 - Hello Word](../parte01/)
  -  02 - Forms
- -  [03 - Services](../parte03/#parte-3-services)
- -  [04 - Diretivas](../parte04/#parte-4-directivas)
- -  [05 - SPA](../parte05/#parte-5-single-page-applications)
+ -  [03 - Services](../parte03/)
+ -  [04 - Diretivas](../parte04/)
+ -  [05 - SPA](../parte05/)
 
 Para treinarmos um pouco mais oque foi visto até agora, faremos a validação de um ```<form>``` com angular, e usando o [boostrap](http://getbootstrap.com/) para a estilização dos exemplos.  
 Para iniciamos uma estrutura básica como usamos até agora, a única diferença é o import do boostrap.

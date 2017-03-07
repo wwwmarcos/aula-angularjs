@@ -1,12 +1,12 @@
 # Parte 3: Services
 
 # Menu
- -  [Inicio](../#escola-de-ti-angular)
- -  [01 - Hello Word](../parte01/#parte-01-hello-word)
- -  [02 - Forms](../parte02/#parte-2-forms)
+ -  [Inicio](../)
+ -  [01 - Hello Word](../parte01/)
+ -  [02 - Forms](../parte02/)
  -  03 - Services
- -  [04 - Diretivas](../parte04/#parte-4-directivas)
- -  [05 - SPA](../parte05/#parte-5-single-page-applications)
+ -  [04 - Diretivas](../parte04/)
+ -  [05 - SPA](../parte05/)
 
 O angular possui services , objetos singletons que ajudam a compartilhar e organizar códigos na aplicação. 
 Usados geralmente para comunicação/requisições com o servidor (parte back-end), sendo eles:

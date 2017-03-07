@@ -1,12 +1,12 @@
 # Parte 4: Directivas
 
 # Menu
- -  [Inicio](../#escola-de-ti-angular)
- -  [01 - Hello Word](../parte01/#parte-01-hello-word)
- -  [02 - Forms](../parte02/#parte-2-forms)
- -  [03 - Services](../parte03/#parte-3-services)
+ -  [Inicio](../)
+ -  [01 - Hello Word](../parte01/)
+ -  [02 - Forms](../parte02/)
+ -  [03 - Services](../parte03/)
  -  04 - Diretivas
- -  [05 - SPA](../parte05/#parte-5-single-page-applications)
+ -  [05 - SPA](../parte05/)
 
 Como já dito antes directivas são extensões da linguagem html que permitem a implementação de novos comportamentos de forma declarativa, manilupando o DOM.
 É possivel utilziar as directivas de forma que se reparoveite código, criando componentes para serem reutilizados no sitema todo.
