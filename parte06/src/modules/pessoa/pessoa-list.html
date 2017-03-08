@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="pessoa in pessoas">
+            <td>{{pessoa.name}}</td>
+            <td>{{pessoa.secondName}}</td>
+            <td>
+            <button type="button" class="btn btn-default" data-ng-click="goToEdit(pessoa)">Editar</button>
+            <button type="button" class="btn btn-danger" data-ng-click="remove(pessoa)">Remover</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
