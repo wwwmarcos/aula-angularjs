@@ -6,7 +6,7 @@
  -  02 - Forms
  -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03)
  -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04)
- -  [05 - SPA](../parte05/)
+ -  [05 - SPA](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte05)
 
 Para treinarmos um pouco mais oque foi visto até agora, faremos a validação de um ```<form>``` com angular, e usando o [boostrap](http://getbootstrap.com/) para a estilização dos exemplos.  
 Para iniciamos uma estrutura básica como usamos até agora, a única diferença é o import do boostrap.
