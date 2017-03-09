@@ -1,12 +1,12 @@
 # Parte 4: Directivas
 
 # Menu
- -  [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular)
- -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01)
- -  [02 - Forms](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte02)
- -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03)
+ -  https://github.com/marcosflorencio/escola-de-ti-angular/README.md
+ -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01/README.md)
+ -  [02 - Forms](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte02/README.md)
+ -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03/README.md)
  -  04 - Diretivas
- -  [05 - SPA](../parte05/)
+ -  [05 - SPA](https://github.com/marcosflorencio/escola-de-ti-angular/blob/master/parte05/README.md)
 
 Como já dito antes directivas são extensões da linguagem html que permitem a implementação de novos comportamentos de forma declarativa, manilupando o DOM.
 É possivel utilziar as directivas de forma que se reparoveite código, criando componentes para serem reutilizados no sitema todo.

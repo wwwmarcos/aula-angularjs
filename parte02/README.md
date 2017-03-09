@@ -1,12 +1,12 @@
 # Parte 2: Forms
 
 # Menu
- -  [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular)
- -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01)
+ -  https://github.com/marcosflorencio/escola-de-ti-angular/README.md
+ -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01/README.md)
  -  02 - Forms
- -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03)
- -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04)
- -  [05 - SPA](../parte05/)
+ -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03/README.md)
+ -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04/README.md)
+ -  [05 - SPA](https://github.com/marcosflorencio/escola-de-ti-angular/blob/master/parte05/README.md)
 
 Para treinarmos um pouco mais oque foi visto até agora, faremos a validação de um ```<form>``` com angular, e usando o [boostrap](http://getbootstrap.com/) para a estilização dos exemplos.  
 Para iniciamos uma estrutura básica como usamos até agora, a única diferença é o import do boostrap.

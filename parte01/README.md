@@ -1,12 +1,12 @@
 # Parte 01: Hello Word
 
 ### Menu
- -  [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular)
+ -  https://github.com/marcosflorencio/escola-de-ti-angular/README.md
  -  01 - Hello Word
- -  [02 - Forms](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte02)
- -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03)
- -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04)
- -  [05 - SPA](../parte05/)
+ -  [02 - Forms](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte02/README.md)
+ -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03/README.md)
+ -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04/README.md)
+ -  [05 - SPA](https://github.com/marcosflorencio/escola-de-ti-angular/blob/master/parte05/README.md)
 
 Ao iniciarmos nosso primeiro app, criaremos um index.hml como de costume e então usaremos o atributo `ng-app` para declararmos nosso primeiro e principal modulo da aplicação. O atributo ng-app pode ser utlizado em qualquer elemento da pagina, nesse exemplo usaremos na tag `<html>`.
 **Two way data binding **
