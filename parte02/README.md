@@ -1,7 +1,7 @@
 # Parte 2: Forms
 
 # Menu
- -  https://github.com/marcosflorencio/escola-de-ti-angular/README.md
+ - [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular/README.md)
  -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01/README.md)
  -  02 - Forms
  -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03/README.md)
