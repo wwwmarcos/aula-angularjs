@@ -1,11 +1,11 @@
 # Parte 5: Single Page Applications
 
 # Menu
- -  [Inicio](../)
- -  [01 - Hello Word](../parte01/)
- -  [02 - Forms](../parte02/)
- -  [03 - Services](../parte03/)
- -  [04 - Diretivas](../parte04/)
+ -  [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular)
+ -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01)
+ -  [02 - Forms](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte02)
+ -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03)
+ -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04)
  -  05 - SPA
 
 ### 5.1 - Introdução
