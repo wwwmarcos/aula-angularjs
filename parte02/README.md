@@ -1,11 +1,11 @@
 # Parte 2: Forms
 
 # Menu
- -  [Inicio](../)
- -  [01 - Hello Word](../parte01/)
+ -  [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular)
+ -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01)
  -  02 - Forms
- -  [03 - Services](../parte03/)
- -  [04 - Diretivas](../parte04/)
+ -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03)
+ -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04)
  -  [05 - SPA](../parte05/)
 
 Para treinarmos um pouco mais oque foi visto até agora, faremos a validação de um ```<form>``` com angular, e usando o [boostrap](http://getbootstrap.com/) para a estilização dos exemplos.  
