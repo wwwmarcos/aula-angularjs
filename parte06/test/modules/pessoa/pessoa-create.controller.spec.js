@@ -3,7 +3,7 @@
     describe('PessoaCreateControllerTest', function() {
       var ctrl
       var $scope = {}
-      var pessoaService
+      var PessoaService
       var $state
       var pessoaMock
 
@@ -12,7 +12,7 @@
       beforeEach(module('pessoa'))
 
       beforeEach(inject(function($controller, _PessoaService_, _$state_, $rootScope) {
-        pessoaService = _PessoaService_
+        PessoaService = _PessoaService_
         $state = _$state_
         $scope = $rootScope.$new()
 
@@ -23,7 +23,7 @@
 
         ctrl = $controller('PessoaCreateController', {
           $scope: $scope,
-          PessoaService: pessoaService,
+          PessoaService: PessoaService,
           $state: $state
         })
       }))
@@ -44,13 +44,13 @@
       })
 
       it('funcao save chamando service de pessoa', function() {
-        spyOn(pessoaService, 'save').and.callFake(saveResponseMock)
+        spyOn(PessoaService, 'save').and.callFake(saveResponseMock)
         $scope.save(pessoaMock)
-        expect(pessoaService.save).toHaveBeenCalled()
+        expect(PessoaService.save).toHaveBeenCalled()
       })
 
       it('reload da pagina apos salvar', function() {
-        spyOn(pessoaService, 'save').and.callFake(saveResponseMock)
+        spyOn(PessoaService, 'save').and.callFake(saveResponseMock)
         spyOn($state, 'reload')
         $scope.save(pessoaMock)
         $scope.$digest()
