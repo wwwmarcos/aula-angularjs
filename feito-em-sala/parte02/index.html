@@ -3,8 +3,8 @@
 	<title>Parte02</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body ng-controller="IndexController">
-	
 	<form name="formPessoa">
 		<input type="text" ng-model="nome" required>
 		<input type="text" ng-model="sobreNome" required>
@@ -16,9 +16,8 @@
 	<br>
 	<br>
 	<br>
-
 	<div>
-		<form name="usuarioForm" class="red">
+		<form name="usuarioForm">
 			<input type="text" ng-model="usuario" required>
 			<input type="text" ng-model="senha" required>
 			<button ng-disabled="usuarioForm.$invalid" class="btn btn-success">wow</button>
@@ -46,14 +45,13 @@
 		</form>
 	<div class="col-md-12 col-lg-12">
 		<table class="table">
-			<tr ng-repeat="auxiliarDoce in doces track by $index">
+			<tr ng-repeat="auxiliarDoce in doces">
 				<td>{{auxiliarDoce.nome}}</td>
 				<td>{{auxiliarDoce.cor}}</td>
 				<td><button ng-click="removerItem(auxiliarDoce)">Remover</button></td>
 			</tr>
 		</table>		
 	</div>
-
 </body>
 </html>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>

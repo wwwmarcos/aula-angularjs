@@ -18,13 +18,15 @@
 </body>
 	
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
-    <script type="text/javascript">
+	<script type="text/javascript">
 	angular
 		.module('app', [])
 		.controller('IndexController', IndexController)
+
 		.controller('OutroController', function($scope){
 			$scope.valorNoOutroController = 'valorNoOutroController';
 		})
+		
 		.controller('MaisUmController', ['$scope', function($scope){
 			$scope.maisUmController = 'maisUmController'; 
 		}]);
