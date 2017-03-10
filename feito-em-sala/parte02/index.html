@@ -1,0 +1,61 @@
+<html ng-app="app">
+<head>
+	<title>Parte02</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-controller="IndexController">
+	
+	<form name="formPessoa">
+		<input type="text" ng-model="nome" required>
+		<input type="text" ng-model="sobreNome" required>
+	</form>
+	nome -> {{nome}}<br>
+	sobrenome -> {{sobreNome}} <br>
+	$dirty -> {{formPessoa.$dirty}} <br>
+	$invalid -> {{formPessoa.$invalid}}
+	<br>
+	<br>
+	<br>
+
+	<div>
+		<form name="usuarioForm" class="red">
+			<input type="text" ng-model="usuario" required>
+			<input type="text" ng-model="senha" required>
+			<button ng-disabled="usuarioForm.$invalid" class="btn btn-success">wow</button>
+		</form>
+	</div>
+	<br>
+	<br>
+	<br>
+		<form name="docesForm" ng-submit="salvarDoce()">
+		<div class="col-md-6 col-lg-6">
+			<div class="form-group">
+				<label>Nome do doce</label>
+				<input type="text" class="form-control" name="doceNome" ng-model="doce.nome" required>
+				<p ng-if="docesForm.doceNome.$invalid">Nome dos doces está invalido</p>
+			</div>
+		</div>
+			<div class="col-md-6 col-lg-6">
+				<div class="form-group">
+					<label>Cor do doce</label>
+					<input name="corDoce" class="form-control" type="text" ng-minlength="3" ng-model="doce.cor" required>
+					<p ng-if="docesForm.corDoce.$invalid">Cor dos doces está invalido</p>
+				</div>
+			</div>
+			<button type="submit" ng-disabled="docesForm.$invalid" class="btn btn-success">Salvar</button>
+		</form>
+	<div class="col-md-12 col-lg-12">
+		<table class="table">
+			<tr ng-repeat="auxiliarDoce in doces track by $index">
+				<td>{{auxiliarDoce.nome}}</td>
+				<td>{{auxiliarDoce.cor}}</td>
+				<td><button ng-click="removerItem(auxiliarDoce)">Remover</button></td>
+			</tr>
+		</table>		
+	</div>
+
+</body>
+</html>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
