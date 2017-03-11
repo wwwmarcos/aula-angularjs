@@ -1,0 +1,24 @@
+<h1>Criar pessoa</h1>
+
+<form name="formPessoaCreate" ng-submit="save(pessoa)">
+
+  <div class="col-md-12 col-lg-12">
+
+    <div class="form-group">
+      <label>Nome</label>
+      <input type="text" name="nome" class="form-control" data-ng-model="pessoa.name" required>
+      <p data-ng-if="formPessoaCreate.nome.$invalid && formPessoaCreate.nome.$dirty" class="help-block">
+        Seu nome é obrigatório.
+      </p>
+    </div>
+    
+    <div class="form-group">
+      <label>Sobrenome</label>
+      <input type="text" name="sobrenome" class="form-control" data-ng-model="pessoa.secondName" required>
+      <p data-ng-if="formPessoaCreate.sobrenome.$invalid && formPessoaCreate.sobrenome.$dirty" class="help-block">
+        Seu nome é obrigatório.
+      </p>
+    </div>
+    <button type="submit" ng-disabled="formPessoaCreate.$invalid" class="btn btn-success">Salvar</button>
+  </div>
+</form>
