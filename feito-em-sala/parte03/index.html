@@ -3,9 +3,17 @@
     <title>Parte03</title>
   </head>
   <body ng-controller="IndexController">
-    <input type="text" ng-model="hoje">
+
+      <table>
+        <tr ng-repeat="doce in doces">
+          <td>{{doce.nome}}</td>
+          <td>{{doce.cor}}</td>
+        </tr>
+      </table>
+
   </body>
 </html>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
 <script src="app.js"></script>
 <script src="index.controller.js"></script>
+<script src="doce.service.js"></script>
