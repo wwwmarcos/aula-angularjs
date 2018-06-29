@@ -35,7 +35,7 @@ São como container armazenam as partes da nossa aplicação (controllers, servi
  -  06 - Testes
 
 ## Exemplos funcionando em:
-[https://eptaccio.github.io/escola-de-ti-angular/](https://eptaccio.github.io/escola-de-ti-angular/)
+[https://eptaccio.github.io/aula-angularjs/](https://eptaccio.github.io/aula-angularjs/)
 
 ## Links para estudar:
     https://rafaell-lycan.com/2015/angular-services-factories-providers/
