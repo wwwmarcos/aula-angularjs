@@ -4,14 +4,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcosflorencio/escola-de-ti-angular.git"
+    "url": "git+https://github.com/marcosflorencio/aula-angularjs.git"
   },
   "author": "marcosflorencio",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/marcosflorencio/escola-de-ti-angular/issues"
+    "url": "https://github.com/marcosflorencio/aula-angularjs/issues"
   },
-  "homepage": "https://github.com/marcosflorencio/escola-de-ti-angular#readme",
+  "homepage": "https://github.com/marcosflorencio/aula-angularjs#readme",
   "devDependencies": {
     "lite-server": "^2.2.2"
   }

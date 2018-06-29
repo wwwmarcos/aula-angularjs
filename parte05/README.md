@@ -1,11 +1,11 @@
 # Parte 5: Single Page Applications
 
 # Menu
- -  [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular)
- -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01)
- -  [02 - Forms](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte02)
- -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03)
- -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04)
+ -  [Inicio](https://github.com/marcosflorencio/aula-angularjs)
+ -  [01 - Hello Word](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte01)
+ -  [02 - Forms](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte02)
+ -  [03 - Services](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte03)
+ -  [04 - Diretivas](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte04)
  -  05 - SPA
 
 ### 5.1 - Introdução
@@ -906,7 +906,7 @@ Sintaxe: `ui-sref="state-name"`
 
 # live-demo
 Live-demo disponível em:
-[https://marcosflorencio.js.org/escola-de-ti-angular/parte05/index.html](https://marcosflorencio.js.org/escola-de-ti-angular/parte05/index.html)
+[https://eptaccio.github.io/aula-angularjs/parte05/index.html](https://eptaccio.github.io/aula-angularjs/parte05/index.html)
 
 
 

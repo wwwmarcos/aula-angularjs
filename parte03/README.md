@@ -1,12 +1,12 @@
 # Parte 3: Services
 
 # Menu
- -  [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular)
- -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01)
- -  [02 - Forms](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte02)
+ -  [Inicio](https://github.com/marcosflorencio/aula-angularjs)
+ -  [01 - Hello Word](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte01)
+ -  [02 - Forms](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte02)
  -  03 - Services
- -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04)
- -  [05 - SPA](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte05)
+ -  [04 - Diretivas](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte04)
+ -  [05 - SPA](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte05)
 
 O angular possui services , objetos singletons que ajudam a compartilhar e organizar códigos na aplicação. 
 Usados geralmente para comunicação/requisições com o servidor (parte back-end), sendo eles:
@@ -101,4 +101,4 @@ Sintaxe:
 
 # live-demo
 Live-demo disponível em:
-[https://marcosflorencio.js.org/escola-de-ti-angular/parte03/index.html](https://marcosflorencio.js.org/escola-de-ti-angular/parte03/index.html)
+[https://eptaccio.github.io/aula-angularjs/parte03/index.html](https://eptaccio.github.io/aula-angularjs/parte03/index.html)

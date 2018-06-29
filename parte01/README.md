@@ -1,12 +1,12 @@
 # Parte 01: Hello Word
 
 ### Menu
- -  [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular)
+ -  [Inicio](https://github.com/marcosflorencio/aula-angularjs)
  -  01 - Hello Word
- -  [02 - Forms](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte02)
- -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03)
- -  [04 - Diretivas](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte04)
- -  [05 - SPA](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte05)
+ -  [02 - Forms](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte02)
+ -  [03 - Services](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte03)
+ -  [04 - Diretivas](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte04)
+ -  [05 - SPA](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte05)
 
 Ao iniciarmos nosso primeiro app, criaremos um index.hml como de costume e então usaremos o atributo `ng-app` para declararmos nosso primeiro e principal modulo da aplicação. O atributo ng-app pode ser utlizado em qualquer elemento da pagina, nesse exemplo usaremos na tag `<html>`.
 **Two way data binding **
@@ -43,5 +43,5 @@ Na função que representa o controller podemos ver o `$scope` sendo usado por m
 # live-demo
 
 Live-demo disponível em:
-[https://marcosflorencio.js.org/escola-de-ti-angular/parte01/index.html](https://marcosflorencio.js.org/escola-de-ti-angular/parte01/index.html)
+[https://eptaccio.github.io/aula-angularjs/parte01/index.html](https://eptaccio.github.io/aula-angularjs/parte01/index.html)
 

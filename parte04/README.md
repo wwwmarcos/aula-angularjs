@@ -1,12 +1,12 @@
 # Parte 4: Directivas
 
 # Menu
- -  [Inicio](https://github.com/marcosflorencio/escola-de-ti-angular)
- -  [01 - Hello Word](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte01)
- -  [02 - Forms](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte02)
- -  [03 - Services](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte03)
+ -  [Inicio](https://github.com/marcosflorencio/aula-angularjs)
+ -  [01 - Hello Word](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte01)
+ -  [02 - Forms](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte02)
+ -  [03 - Services](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte03)
  -  04 - Diretivas
- -  [05 - SPA](https://github.com/marcosflorencio/escola-de-ti-angular/tree/master/parte05)
+ -  [05 - SPA](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte05)
 
 Como já dito antes directivas são extensões da linguagem html que permitem a implementação de novos comportamentos de forma declarativa, manilupando o DOM.
 É possivel utilziar as directivas de forma que se reparoveite código, criando componentes para serem reutilizados no sitema todo.
@@ -241,4 +241,4 @@ Vantagens:
 
 # live-demo
 Live-demo disponível em:
-[https://marcosflorencio.js.org/escola-de-ti-angular/parte04/index.html](https://marcosflorencio.js.org/escola-de-ti-angular/parte04/index.html)
+[https://eptaccio.github.io/aula-angularjs/parte04/index.html](https://eptaccio.github.io/aula-angularjs/parte04/index.html)
