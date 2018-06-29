@@ -1,4 +1,4 @@
-# escola-de-ti-angular
+# aula-angularjs
 Aula de angularjs 1.x
 
 ## Ferramentas utilizadas
