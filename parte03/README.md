@@ -1,12 +1,12 @@
 # Parte 3: Services
 
 # Menu
- -  [Inicio](https://github.com/marcosflorencio/aula-angularjs)
- -  [01 - Hello Word](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte01)
- -  [02 - Forms](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte02)
+ -  [Inicio](https://github.com/eptaccio/aula-angularjs)
+ -  [01 - Hello Word](https://github.com/eptaccio/aula-angularjs/tree/master/parte01)
+ -  [02 - Forms](https://github.com/eptaccio/aula-angularjs/tree/master/parte02)
  -  03 - Services
- -  [04 - Diretivas](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte04)
- -  [05 - SPA](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte05)
+ -  [04 - Diretivas](https://github.com/eptaccio/aula-angularjs/tree/master/parte04)
+ -  [05 - SPA](https://github.com/eptaccio/aula-angularjs/tree/master/parte05)
 
 O angular possui services , objetos singletons que ajudam a compartilhar e organizar códigos na aplicação. 
 Usados geralmente para comunicação/requisições com o servidor (parte back-end), sendo eles:

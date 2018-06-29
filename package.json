@@ -4,14 +4,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcosflorencio/aula-angularjs.git"
+    "url": "git+https://github.com/eptaccio/aula-angularjs.git"
   },
-  "author": "marcosflorencio",
+  "author": "eptaccio",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/marcosflorencio/aula-angularjs/issues"
+    "url": "https://github.com/eptaccio/aula-angularjs/issues"
   },
-  "homepage": "https://github.com/marcosflorencio/aula-angularjs#readme",
+  "homepage": "https://github.com/eptaccio/aula-angularjs#readme",
   "devDependencies": {
     "lite-server": "^2.2.2"
   }

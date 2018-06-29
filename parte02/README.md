@@ -1,12 +1,12 @@
 # Parte 2: Forms
 
 # Menu
- -  [Inicio](https://github.com/marcosflorencio/aula-angularjs)
- -  [01 - Hello Word](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte01)
+ -  [Inicio](https://github.com/eptaccio/aula-angularjs)
+ -  [01 - Hello Word](https://github.com/eptaccio/aula-angularjs/tree/master/parte01)
  -  02 - Forms
- -  [03 - Services](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte03)
- -  [04 - Diretivas](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte04)
- -  [05 - SPA](https://github.com/marcosflorencio/aula-angularjs/tree/master/parte05)
+ -  [03 - Services](https://github.com/eptaccio/aula-angularjs/tree/master/parte03)
+ -  [04 - Diretivas](https://github.com/eptaccio/aula-angularjs/tree/master/parte04)
+ -  [05 - SPA](https://github.com/eptaccio/aula-angularjs/tree/master/parte05)
 
 Para treinarmos um pouco mais oque foi visto até agora, faremos a validação de um ```<form>``` com angular, e usando o [boostrap](http://getbootstrap.com/) para a estilização dos exemplos.  
 Para iniciamos uma estrutura básica como usamos até agora, a única diferença é o import do boostrap.
